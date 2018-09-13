@@ -66,6 +66,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-websocket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/13/websocket/" class="article-date">
+  <time datetime="2018-09-13T14:39:23.000Z" itemprop="datePublished">2018-09-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/13/websocket/">websocket</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="websocket简介"><a href="#websocket简介" class="headerlink" title="websocket简介"></a>websocket简介</h3><p>websocket即所谓的长连接<br>我们可以在连接后和服务器持续保持连接<br>跟轮询或ajax模拟相比，是真正意义上的长连接</p>
+<p>ps：<br>websocket是浏览器自带支持的<br>可以在浏览器的console中输入window.WebSocket查看</p>
+<hr>
+<h3 id="websocket的使用"><a href="#websocket的使用" class="headerlink" title="websocket的使用"></a>websocket的使用</h3><p>对于websocket的使用，我们可以直接根据MDN上的<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSocket" title="websocketAPI" target="_blank" rel="noopener">websocketAPI</a>去创建  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var websocket = new WebSocket(&quot;ws://localhost:8088&quot;);  </span><br><span class="line">websocket.onopen = function(event) &#123;</span><br><span class="line">  console.log(&quot;WebSocket is open now.&quot;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>其他监听事件类似，发送消息可用<br><code>websocket.send(&#39;msg&#39;)</code></p>
+<p>服务端可以直接用第三方库使用  </p>
+<hr>
+<h3 id="java和websocket"><a href="#java和websocket" class="headerlink" title="java和websocket"></a>java和websocket</h3><p>websocket， socketJS， stomp</p>
+<p>在浏览器不支持websocket时，socketJS可模拟一个websocket<br>可以理解为其实就是websocket  </p>
+<p>而stomp是作用在这两个底层协议之上的协议<br>这个协议规范了websocket中没有规范的消息的内容  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjm0pk6za0001c82005x03ew0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo主题favicon" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/30/hexo主题favicon/" class="article-date">
@@ -100,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjlzb3lrt00029s20rx13voxl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjm0pk6zh0004c820gq4ij7vr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjlzb3lrw00049s20mtx9g4u6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjm0pk6zg0003c820jgx4qjpj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjlzb3lrv00039s2047tpy9ef" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjm0pk71a0005c820uz1gf5tl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -253,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjlzb3lrl00009s209fgota4x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjm0pk6xa0000c820lwvjxump" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjlzb3lrr00019s20er58hax4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjm0pk6zd0002c820v9f8nauf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,7 +373,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -337,6 +384,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/09/13/websocket/">websocket</a>
+          </li>
         
           <li>
             <a href="/2018/08/30/hexo主题favicon/">hexo主题favicon</a>
@@ -352,10 +403,6 @@
         
           <li>
             <a href="/2018/08/19/first/">readme</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/17/hello-world/">Hello World</a>
           </li>
         
       </ul>
