@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>POI | zerotop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件以下内容会简述excel读取相关的一些内容   poi1.格式  HSSF - 可以读取.xls文件  XSSF - 可以读取.xlsx文件 2.poi模型poi将excel中的模型都定义到org.">
+<meta name="keywords" content="zerotop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POI">
+<meta property="og:url" content="http://yoursite.com/2018/09/25/POI/index.html">
+<meta property="og:site_name" content="zerotop">
+<meta property="og:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件以下内容会简述excel读取相关的一些内容   poi1.格式  HSSF - 可以读取.xls文件  XSSF - 可以读取.xlsx文件 2.poi模型poi将excel中的模型都定义到org.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-25T15:04:03.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="POI">
+<meta name="twitter:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件以下内容会简述excel读取相关的一些内容   poi1.格式  HSSF - 可以读取.xls文件  XSSF - 可以读取.xlsx文件 2.poi模型poi将excel中的模型都定义到org.">
+  
+    <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zerotop</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-POI" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/25/POI/" class="article-date">
+  <time datetime="2018-09-25T12:51:07.000Z" itemprop="datePublished">2018-09-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      POI
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>poi即Poor Obfuscation Implementatio<br>poi是Apache软件基金会的开放源码函式库<br>java程序开发者可以使用poi提供的api读取Microsoft Office文件<br>以下内容会简述excel读取相关的一些内容  </p>
+<h3 id="poi"><a href="#poi" class="headerlink" title="poi"></a>poi</h3><h3 id="1-格式"><a href="#1-格式" class="headerlink" title="1.格式"></a>1.格式</h3><p>  HSSF - 可以读取.xls文件<br>  XSSF - 可以读取.xlsx文件</p>
+<h3 id="2-poi模型"><a href="#2-poi模型" class="headerlink" title="2.poi模型"></a>2.poi模型</h3><p>poi将excel中的模型都定义到org.apache.poi.ss.usermodel包中<br>比如workbook，sheet，cell等<br>通过操纵这些模型对应excel<br>我们可以创建或者解析excel文件</p>
+<h3 id="3-读取"><a href="#3-读取" class="headerlink" title="3.读取"></a>3.读取</h3><p>excel读取重点在于解析cell表格中的数据  </p>
+<p>excel表格中的单元格由不同的单元格格式具有不同的dataformate<br>但单元格内容决定因素是单元格中的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cell.getCellStyle().getDataFormat()  </span><br><span class="line">cell.getCellStyle().getDataFormatString()</span><br></pre></td></tr></table></figure></p>
+<p>cell中值七种形式:<br>_NONE、BLANK、BOOLEAN、ERROR、FORMULA、NUMERIC、STRING<br>首先对于numeric类型的cell，我们可以读取日历和数字格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) &#123;</span><br><span class="line">  //日历   </span><br><span class="line">  if (DateUtil..isCellDateFormatted(cell)) &#123;</span><br><span class="line">	Date date = cell.getDateCellValue();</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">    val = sdf.format(date);</span><br><span class="line">  &#125;</span><br><span class="line">  if (format == 14 || format == 31 || format == 57 || format == 58  </span><br><span class="line">           || (176&lt;=format  &amp;&amp; format&lt;=196)) &#123;</span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;yyy-mm-dd&quot;);</span><br><span class="line">  &#125; else &#123; </span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对于公式类型的，即单元格中的值通过其他单元格组合计算出来的<br>需要取出计算后的值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FormulaEvaluator evaluator = null;</span><br><span class="line">if (cell instanceof HSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new HSSFFormulaEvaluator((HSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">if (cell instanceof XSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new XSSFFormulaEvaluator((XSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">val = evaluator.evaluateFormulaCell(cell);</span><br></pre></td></tr></table></figure></p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>1.参考文档中的一句话：<br>If what you want to do is get a String value for your numeric cell, stop!. This is not the way to do it. Instead, for fetching the string value of a numeric or boolean or date cell, use DataFormatter instead.  </p>
+<p>2.对于excel中拆分已合并的单元格：<br>excel中合并单元格都将会将值填入最右上角的单元格中<br>所以可以先将合并的单元格全部取出，然后记录右上角的cell<br>先将removeMergedRegion(int index)单元格释放之后再填入值。<br>注意，如果批量拆分单元格。注意循环时每次释放合并的单元格时<br>合并单元格的数量都会减一。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int sum = sheet.getNumMergedRegions()</span><br><span class="line">for (int i=0;i&lt;sum;i++) &#123;</span><br><span class="line">  CellRangeAddress cellAddr = cell.getMergedRegion(0);</span><br><span class="line">  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())</span><br><span class="line">  sheet.removeMergedRegion(0);</span><br><span class="line">  //循环将cell值填入CellRangeAddress范围内的单元格中即可</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>3.对于sheet读取异常问题<br>有时候一个excel中可能会有很多sheet，不过sheet隐藏了<br>我们可以使用方法判断当前sheet是否是隐藏状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">book.isSheetHidden(book.getSheetIndex(sheet))</span><br></pre></td></tr></table></figure></p>
+<h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><p>未完待续。。。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmhusl7n0000zo20t0kj5xt8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/13/websocket/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">websocket</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/25/POI/">POI</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/13/websocket/">websocket</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/30/hexo主题favicon/">hexo主题favicon</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/28/google-plugins/">google-plugins</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/27/tools/">dev tools</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 zerotop<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
