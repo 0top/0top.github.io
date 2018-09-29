@@ -93,17 +93,18 @@
 <h3 id="2-poi模型"><a href="#2-poi模型" class="headerlink" title="2.poi模型"></a>2.poi模型</h3><p>poi将excel中的模型都定义到org.apache.poi.ss.usermodel包中<br>比如workbook，sheet，cell等<br>通过操纵这些模型对应excel<br>我们可以创建或者解析excel文件</p>
 <h3 id="3-读取"><a href="#3-读取" class="headerlink" title="3.读取"></a>3.读取</h3><p>excel读取重点在于解析cell表格中的数据  </p>
 <p>excel表格中的单元格由不同的单元格格式具有不同的dataformate<br>但单元格内容决定因素是单元格中的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cell.getCellStyle().getDataFormat()  </span><br><span class="line">cell.getCellStyle().getDataFormatString()</span><br></pre></td></tr></table></figure></p>
-<p>cell中值七种形式:<br>_NONE、BLANK、BOOLEAN、ERROR、FORMULA、NUMERIC、STRING<br>首先对于numeric类型的cell，我们可以读取日历和数字格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) &#123;</span><br><span class="line">  //日历   </span><br><span class="line">  if (DateUtil..isCellDateFormatted(cell)) &#123;</span><br><span class="line">	Date date = cell.getDateCellValue();</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">    val = sdf.format(date);</span><br><span class="line">  &#125;</span><br><span class="line">  if (format == 14 || format == 31 || format == 57 || format == 58  </span><br><span class="line">           || (176&lt;=format  &amp;&amp; format&lt;=196)) &#123;</span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;yyy-mm-dd&quot;);</span><br><span class="line">  &#125; else &#123; </span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>cell中值七种形式:<br>_NONE、BLANK、BOOLEAN、ERROR、FORMULA、NUMERIC、STRING<br>首先对于numeric类型的cell，我们可以读取日历和数字格式<br>“@”即取文本格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) &#123;</span><br><span class="line">  //日历   </span><br><span class="line">  if (DateUtil..isCellDateFormatted(cell)) &#123;</span><br><span class="line">	Date date = cell.getDateCellValue();</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">    val = sdf.format(date);</span><br><span class="line">  &#125;</span><br><span class="line">  if (format == 14 || format == 31 || format == 57 || format == 58  </span><br><span class="line">           || (176&lt;=format  &amp;&amp; format&lt;=184)) &#123;</span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;yyy-mm-dd&quot;);</span><br><span class="line">  &#125; else &#123; </span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>对于公式类型的，即单元格中的值通过其他单元格组合计算出来的<br>需要取出计算后的值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FormulaEvaluator evaluator = null;</span><br><span class="line">if (cell instanceof HSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new HSSFFormulaEvaluator((HSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">if (cell instanceof XSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new XSSFFormulaEvaluator((XSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">val = evaluator.evaluateFormulaCell(cell);</span><br></pre></td></tr></table></figure></p>
-<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>1.参考文档中的一句话：<br>If what you want to do is get a String value for your numeric cell, stop!. This is not the way to do it. Instead, for fetching the string value of a numeric or boolean or date cell, use DataFormatter instead.  </p>
-<p>2.对于excel中拆分已合并的单元格：<br>excel中合并单元格都将会将值填入最右上角的单元格中<br>所以可以先将合并的单元格全部取出，然后记录右上角的cell<br>先将removeMergedRegion(int index)单元格释放之后再填入值。<br>注意，如果批量拆分单元格。注意循环时每次释放合并的单元格时<br>合并单元格的数量都会减一。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int sum = sheet.getNumMergedRegions()</span><br><span class="line">for (int i=0;i&lt;sum;i++) &#123;</span><br><span class="line">  CellRangeAddress cellAddr = cell.getMergedRegion(0);</span><br><span class="line">  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())</span><br><span class="line">  sheet.removeMergedRegion(0);</span><br><span class="line">  //循环将cell值填入CellRangeAddress范围内的单元格中即可</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.对于sheet读取异常问题<br>有时候一个excel中可能会有很多sheet，不过sheet隐藏了<br>我们可以使用方法判断当前sheet是否是隐藏状态<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">book.isSheetHidden(book.getSheetIndex(sheet))</span><br></pre></td></tr></table></figure></p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>1.参考文档中的一句话：<br>If what you want to do is get a String value for your numeric cell, stop!. This is not the way to do it. Instead, for fetching the string value of a numeric or boolean or date cell, use DataFormatter instead.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2.对于excel中拆分已合并的单元格：  </span><br><span class="line">excel中合并单元格都将会将值填入最右上角的单元格中  </span><br><span class="line">所以可以先将合并的单元格全部取出，然后记录右上角的cell  </span><br><span class="line">先将removeMergedRegion(int index)单元格释放之后再填入值。  </span><br><span class="line">注意，如果批量拆分单元格。注意循环时每次释放合并的单元格时  </span><br><span class="line">合并单元格的数量都会减一。</span><br></pre></td></tr></table></figure></p>
+<p>int sum = sheet.getNumMergedRegions()<br>for (int i=0;i&lt;sum;i++) {<br>  CellRangeAddress cellAddr = cell.getMergedRegion(0);<br>  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())<br>  sheet.removeMergedRegion(0);<br>  //循环将cell值填入CellRangeAddress范围内的单元格中即可<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.对于sheet读取异常问题  </span><br><span class="line">有时候一个excel中可能会有很多sheet，不过sheet隐藏了  </span><br><span class="line">我们可以使用方法判断当前sheet是否是隐藏状态</span><br></pre></td></tr></table></figure></p>
+<p>book.isSheetHidden(book.getSheetIndex(sheet))<br><code>`</code></p>
+<p>4.poi文档中有内置的单元格格式<br>在Class BuiltinFormats中指定The first user-defined number format starts at 164.<br>所以自定义的dataformate()会和日期重合<br>然后自定义的格式的dataformate()值是不定的，最好组合dataformateString去判断</p>
 <h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><p>未完待续。。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmhusl7n0000zo20t0kj5xt8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmnjsyro0000fk20emom866r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjmhusl810006zo20drdha9cp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjmnjsyv80004fk2054hw7pg8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjmhusl7y0003zo20i2pk3riz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjmnjsyrx0003fk20ytd0tfx5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,12 +252,13 @@
 <h4 id="4-删除元素方法："><a href="#4-删除元素方法：" class="headerlink" title="4. 删除元素方法："></a>4. 删除元素方法：</h4><p>jquery的 $(“#id”).remove()  可以直接删元素<br>比如：$(“aside”).remove()<br>或者根据id删除：<br>比如 : $(“#id”).remove()<br>或者根据class删除：<br>比如：$(“.class”).remove()  </p>
 <hr>
 <h3 id="google插件安装"><a href="#google插件安装" class="headerlink" title="google插件安装:"></a>google插件安装:</h3><p>google安装插件还是很简单的:<br>右上角选择更多工具-&gt;扩展程序   或者  点击设置-&gt;扩展程序<br>或者直接输地址:chrome://extensions/<br>首先开开发者模式-&gt;加载已解压的扩展程序-&gt;选择写好的插件的目录 就ok啦  </p>
-<p>然后便可以直接去拿一个csdn的博客页去做尝试了<br>我使用的还是效果不错的，有兴趣的可以一起交流</p>
+<p>然后便可以直接去拿一个csdn的博客页去做尝试了<br>我使用的还是效果不错的，有兴趣的可以一起交流  </p>
+<h3 id="新的想法"><a href="#新的想法" class="headerlink" title="新的想法"></a>新的想法</h3><p>可以尝试做一个在看javadocs时可以自动生成类或者接口的继承图<br>个人感觉可以用得到</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjmhusl7u0001zo20po5krs9m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjmnjsyrv0002fk20za0nroef" class="article-share-link">Share</a>
       
       
     </footer>
@@ -312,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjmhusl800005zo207qy5v1tu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjmnjsyvh0006fk20h69w3mz2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjmhusl7w0002zo20hhqmsni4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjmnjsyrt0001fk20zs3miup8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,7 +397,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjmhusl7z0004zo20g3iy74jb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjmnjsyvc0005fk208xp6j5to" class="article-share-link">Share</a>
       
       
     </footer>
