@@ -7,18 +7,18 @@
   
   <title>POI | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件以下内容会简述excel读取相关的一些内容   poi1.格式  HSSF - 可以读取.xls文件  XSSF - 可以读取.xlsx文件 2.poi模型poi将excel中的模型都定义到org.">
+  <meta name="description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件excel, word, PowerPoint等以下内容会简述excel读取相关的一些内容https://poi.apache.org/ poi1.格式  HSSF - 可以读取.xls文件  XS">
 <meta name="keywords" content="zerotop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="POI">
 <meta property="og:url" content="http://yoursite.com/2018/09/25/POI/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件以下内容会简述excel读取相关的一些内容   poi1.格式  HSSF - 可以读取.xls文件  XSSF - 可以读取.xlsx文件 2.poi模型poi将excel中的模型都定义到org.">
+<meta property="og:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件excel, word, PowerPoint等以下内容会简述excel读取相关的一些内容https://poi.apache.org/ poi1.格式  HSSF - 可以读取.xls文件  XS">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-29T14:41:38.020Z">
+<meta property="og:updated_time" content="2018-09-30T13:38:40.618Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POI">
-<meta name="twitter:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件以下内容会简述excel读取相关的一些内容   poi1.格式  HSSF - 可以读取.xls文件  XSSF - 可以读取.xlsx文件 2.poi模型poi将excel中的模型都定义到org.">
+<meta name="twitter:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件excel, word, PowerPoint等以下内容会简述excel读取相关的一些内容https://poi.apache.org/ poi1.格式  HSSF - 可以读取.xls文件  XS">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -87,7 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>poi即Poor Obfuscation Implementatio<br>poi是Apache软件基金会的开放源码函式库<br>java程序开发者可以使用poi提供的api读取Microsoft Office文件<br>以下内容会简述excel读取相关的一些内容  </p>
+        <h3 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h3><p>poi即Poor Obfuscation Implementatio<br>poi是Apache软件基金会的开放源码函式库<br>java程序开发者可以使用poi提供的api读取Microsoft Office文件<br>excel, word, PowerPoint等<br>以下内容会简述excel读取相关的一些内容<br><a href="https://poi.apache.org/" title="poi" target="_blank" rel="noopener">https://poi.apache.org/</a></p>
 <h3 id="poi"><a href="#poi" class="headerlink" title="poi"></a>poi</h3><h3 id="1-格式"><a href="#1-格式" class="headerlink" title="1.格式"></a>1.格式</h3><p>  HSSF - 可以读取.xls文件<br>  XSSF - 可以读取.xlsx文件</p>
 <h3 id="2-poi模型"><a href="#2-poi模型" class="headerlink" title="2.poi模型"></a>2.poi模型</h3><p>poi将excel中的模型都定义到org.apache.poi.ss.usermodel包中<br>比如workbook，sheet，cell等<br>通过操纵这些模型对应excel<br>我们可以创建或者解析excel文件</p>
 <h3 id="3-读取"><a href="#3-读取" class="headerlink" title="3.读取"></a>3.读取</h3><p>excel读取重点在于解析cell表格中的数据  </p>
@@ -97,13 +97,13 @@
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>1.参考文档中的一句话：<br>If what you want to do is get a String value for your numeric cell, stop!. This is not the way to do it. Instead, for fetching the string value of a numeric or boolean or date cell, use DataFormatter instead.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2.对于excel中拆分已合并的单元格：  </span><br><span class="line">excel中合并单元格都将会将值填入最右上角的单元格中  </span><br><span class="line">所以可以先将合并的单元格全部取出，然后记录右上角的cell  </span><br><span class="line">先将removeMergedRegion(int index)单元格释放之后再填入值。  </span><br><span class="line">注意，如果批量拆分单元格。注意循环时每次释放合并的单元格时  </span><br><span class="line">合并单元格的数量都会减一。</span><br></pre></td></tr></table></figure></p>
 <p>int sum = sheet.getNumMergedRegions()<br>for (int i=0;i&lt;sum;i++) {<br>  CellRangeAddress cellAddr = cell.getMergedRegion(0);<br>  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())<br>  sheet.removeMergedRegion(0);<br>  //循环将cell值填入CellRangeAddress范围内的单元格中即可<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.对于sheet读取异常问题  </span><br><span class="line">有时候一个excel中可能会有很多sheet，不过sheet隐藏了  </span><br><span class="line">我们可以使用方法判断当前sheet是否是隐藏状态</span><br></pre></td></tr></table></figure></p>
 <p>book.isSheetHidden(book.getSheetIndex(sheet))<br><code>`</code></p>
-<p>4.poi文档中有内置的单元格格式<br>在Class BuiltinFormats中指定The first user-defined number format starts at 164.<br>所以自定义的dataformate()会和日期重合<br>然后自定义的格式的dataformate()值是不定的，最好组合dataformateString去判断</p>
+<p>4.poi文档中有内置的单元格格式<br><a href="https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-" target="_blank" rel="noopener">https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-</a><br>在Class BuiltinFormats中指定The first user-defined number format starts at 164.<br>所以自定义的dataformate()会和日期重合<br>然后自定义的格式的dataformate()值是不定的，最好组合dataformateString去判断</p>
 <h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><p>未完待续。。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmnjsyro0000fk20emom866r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmoxjed80005h820nh16gck9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,6 +111,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2018/09/30/Regular-expression/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Regular expression
+        
+      </div>
+    </a>
   
   
     <a href="/2018/09/13/websocket/" id="article-nav-older" class="article-nav-link-wrap">
@@ -152,6 +161,10 @@
       <ul>
         
           <li>
+            <a href="/2018/09/30/Regular-expression/">Regular expression</a>
+          </li>
+        
+          <li>
             <a href="/2018/09/25/POI/">POI</a>
           </li>
         
@@ -165,10 +178,6 @@
         
           <li>
             <a href="/2018/08/28/google-plugins/">google-plugins</a>
-          </li>
-        
-          <li>
-            <a href="/2018/08/27/tools/">dev tools</a>
           </li>
         
       </ul>
