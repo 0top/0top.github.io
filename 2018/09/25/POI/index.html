@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="zerotop">
 <meta property="og:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件excel, word, PowerPoint等以下内容会简述excel读取相关的一些内容https://poi.apache.org/ poi1.格式  HSSF - 可以读取.xls文件  XS">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-30T13:38:40.618Z">
+<meta property="og:updated_time" content="2018-10-08T14:52:11.888Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POI">
 <meta name="twitter:description" content="简述poi即Poor Obfuscation Implementatiopoi是Apache软件基金会的开放源码函式库java程序开发者可以使用poi提供的api读取Microsoft Office文件excel, word, PowerPoint等以下内容会简述excel读取相关的一些内容https://poi.apache.org/ poi1.格式  HSSF - 可以读取.xls文件  XS">
@@ -98,12 +98,13 @@
 <p>int sum = sheet.getNumMergedRegions()<br>for (int i=0;i&lt;sum;i++) {<br>  CellRangeAddress cellAddr = cell.getMergedRegion(0);<br>  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())<br>  sheet.removeMergedRegion(0);<br>  //循环将cell值填入CellRangeAddress范围内的单元格中即可<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.对于sheet读取异常问题  </span><br><span class="line">有时候一个excel中可能会有很多sheet，不过sheet隐藏了  </span><br><span class="line">我们可以使用方法判断当前sheet是否是隐藏状态</span><br></pre></td></tr></table></figure></p>
 <p>book.isSheetHidden(book.getSheetIndex(sheet))<br><code>`</code></p>
 <p>4.poi文档中有内置的单元格格式<br><a href="https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-" target="_blank" rel="noopener">https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-</a><br>在Class BuiltinFormats中指定The first user-defined number format starts at 164.<br>所以自定义的dataformate()会和日期重合<br>然后自定义的格式的dataformate()值是不定的，最好组合dataformateString去判断</p>
-<h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><p>未完待续。。。</p>
+<h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>通过sheet获取的getLastRowNum()值偏大<br>currentRecordRow = sheet.getRow(currentRecordRowNum);<br>可能虽然在lastrownum范围内，但是可能取到的值为null<br>所以需要判断currentRecordRow是否为空以及row中的cell是否都为空</p>
+<p>未完待续。。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmw3tzwb00065c209rpkrx8q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjn0f3d6b0000ug20reabfpfr" class="article-share-link">Share</a>
       
       
     </footer>

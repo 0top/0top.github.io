@@ -89,12 +89,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>本篇文章主要是讨论一些常用的中间件</p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>首先会使用rabbitmq</p>
-
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>首先会使用rabbitmq<br>rabbitmq支持stomp协议</p>
+<p>安装rabbitmq需要安装Erlang(需要翻墙)</p>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjmw3tzw000035c201wt7sb7m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjn0f3d850005ug20vuzjdk3d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -140,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjmw3tzvf00005c20esf70lpb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjn0f3d7x0001ug20i1vtm4tq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -183,12 +184,13 @@
 <p>int sum = sheet.getNumMergedRegions()<br>for (int i=0;i&lt;sum;i++) {<br>  CellRangeAddress cellAddr = cell.getMergedRegion(0);<br>  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())<br>  sheet.removeMergedRegion(0);<br>  //循环将cell值填入CellRangeAddress范围内的单元格中即可<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.对于sheet读取异常问题  </span><br><span class="line">有时候一个excel中可能会有很多sheet，不过sheet隐藏了  </span><br><span class="line">我们可以使用方法判断当前sheet是否是隐藏状态</span><br></pre></td></tr></table></figure></p>
 <p>book.isSheetHidden(book.getSheetIndex(sheet))<br><code>`</code></p>
 <p>4.poi文档中有内置的单元格格式<br><a href="https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-" target="_blank" rel="noopener">https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-</a><br>在Class BuiltinFormats中指定The first user-defined number format starts at 164.<br>所以自定义的dataformate()会和日期重合<br>然后自定义的格式的dataformate()值是不定的，最好组合dataformateString去判断</p>
-<h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><p>未完待续。。。</p>
+<h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>通过sheet获取的getLastRowNum()值偏大<br>currentRecordRow = sheet.getRow(currentRecordRowNum);<br>可能虽然在lastrownum范围内，但是可能取到的值为null<br>所以需要判断currentRecordRow是否为空以及row中的cell是否都为空</p>
+<p>未完待续。。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjmw3tzwb00065c209rpkrx8q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjn0f3d6b0000ug20reabfpfr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjmw3tzwo00095c204cpo4wey" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjn0f3d840004ug20mkzvji23" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +282,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjmw3tzvy00025c2029xb1k6w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjn0f3d8k0008ug2066wvlgbe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjmw3tzx8000a5c20jox9p29f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjn0f3d820003ug203znujyxo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjmw3tzwm00085c204ur27u9i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjn0f3d880006ug20mn0hs23v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjmw3tzvu00015c20x6qtpynp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjn0f3d810002ug20hgje8que" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,7 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjmw3tzw200045c208fks0rjj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjn0f3d9m000aug20vlqg3esm" class="article-share-link">Share</a>
       
       
     </footer>
