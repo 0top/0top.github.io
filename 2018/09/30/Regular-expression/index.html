@@ -7,18 +7,18 @@
   
   <title>Regular expression | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 记录https://www.regular-expressions.info/repeat.html 1.匹配过程：贪婪： 通过&amp;lt;.+&amp;gt; 匹配  This is a">
+  <meta name="description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 关于正则测试工具: regexbuddy可以查看正则匹配的过程，便于优化   记录https://www.regular-expressions.info/repeat.htm">
 <meta name="keywords" content="zerotop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Regular expression">
 <meta property="og:url" content="http://yoursite.com/2018/09/30/Regular-expression/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 记录https://www.regular-expressions.info/repeat.html 1.匹配过程：贪婪： 通过&amp;lt;.+&amp;gt; 匹配  This is a">
+<meta property="og:description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 关于正则测试工具: regexbuddy可以查看正则匹配的过程，便于优化   记录https://www.regular-expressions.info/repeat.htm">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-30T13:56:35.939Z">
+<meta property="og:updated_time" content="2018-10-09T15:06:35.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Regular expression">
-<meta name="twitter:description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 记录https://www.regular-expressions.info/repeat.html 1.匹配过程：贪婪： 通过&amp;lt;.+&amp;gt; 匹配  This is a">
+<meta name="twitter:description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 关于正则测试工具: regexbuddy可以查看正则匹配的过程，便于优化   记录https://www.regular-expressions.info/repeat.htm">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -89,17 +89,21 @@
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本篇文章内容主要是在学习正则表达式中记录的一些笔记<br>希望能对你有所帮助  </p>
 <h3 id="地址"><a href="#地址" class="headerlink" title="地址"></a>地址</h3><p>有需要的朋友可以去这个地址看正则相关内容<br><a href="https://www.regular-expressions.info/tutorial.html" target="_blank" rel="noopener">https://www.regular-expressions.info/tutorial.html</a></p>
+<p>关于正则测试工具: regexbuddy<br>可以查看正则匹配的过程，便于优化  </p>
 <h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p><a href="https://www.regular-expressions.info/repeat.html" target="_blank" rel="noopener">https://www.regular-expressions.info/repeat.html</a></p>
 <p>1.匹配过程：<br>贪婪： 通过&lt;.+&gt; 匹配  This is a <em>first</em> test<br>在匹配到&lt;之后，.+会直接匹配到字符串最后t，发现结果未匹配成功<br>开始回溯，到s位置，发现未匹配成功，继续向前回溯，<br>最终在M处匹配成功。<br>匹配结果：  &lt;EM>first&lt;/EM></p>
 <p>非贪婪： 通过&lt;.+?&gt; 匹配  This is a <em>first</em> test<br>在匹配到&lt;之后，正则引擎匹配E发现结果不匹配，进行回溯<br>但是在非贪婪模式下的回溯为扩张，所以继续匹配M，结果成功<br>匹配结果：  &lt;EM> </p>
 <p>对于此类匹配，更优的正则式为：  &lt;[^&gt;]+&gt;<br>[^&gt;]+ 表示匹配多个非&gt;号的符号</p>
 <p>2.对于[]:<br>It is important to remember that a negated character class<br>still must match a character<br>意思是一个中括号需要匹配字符，<br>q[^u]   不会匹配   Iraq 因为q后没有字符<br>但是会匹配Iraq is a country.</p>
 <p>如果想匹配    q后面不是u 以及单纯只有一个q<br>正则式： q(?!u)  </p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><h5 id="Anchor-锚点"><a href="#Anchor-锚点" class="headerlink" title="Anchor 锚点"></a>Anchor 锚点</h5><p>caret ：  ^匹配插入字符第一个字符前面的位置<br>dollar：  $匹配插入字符最后一个字符后面位置<br>以上两个会在不同的语言中匹配不同，因为如果有多行数据，可能会只匹配一行<br>/A    字符串开头<br>/Z     字符串结尾<br>永远只只对于数据的开头和结尾，不受多行字符串影响(部分不支持)  </p>
+<p>negated character classes also match (invisible) line break characters.<br>否定的字符类也匹配（不可见）换行符。<br>[^0-9]      [^0-9\r\n]matches any character that is not a digit or a line break.  </p>
+<p>[x^] matches an x or a caret.  –^不放到[]开头位置即可，不需要转义<br>[]x] matches a closing bracket or an x<br>[^]x] matches any character that is not a closing bracket or an x<br>This does not work in JavaScript,  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjn0f3d7x0001ug20i1vtm4tq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjn1v0u0r0000q020knt9jt0f" class="article-share-link">Share</a>
       
       
     </footer>
