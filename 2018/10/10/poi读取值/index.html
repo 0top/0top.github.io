@@ -7,18 +7,18 @@
   
   <title>poi读取值 | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介excel中单元格看到的值并不是真实的值而且和自定义格式关系不是很密切 过程今天lz在用poi读取excel发现了一个奇怪的数值excel表中字面值：10月9日编辑值：2018/10/9读取值：43382   这明显不对啊，读取一波  cell.getCellType()预计是：Cell.CELL_TYPE_NUMERIC实际是：Cell.CELL_TYPE_STRING 这还玩毛线啊 Cel">
+  <meta name="description" content="简介excel中单元格看到的值并不是真实的值而且和自定义格式关系不是很密切 过程今天lz在用poi读取excel发现了一个奇怪的数值excel表中：字面值：10月9日编辑值：2018/10/9读取值：43382 这明显不对啊，读取一波  cell.getCellType()预计是：Cell.CELL_TYPE_NUMERIC实际是：Cell.CELL_TYPE_STRING 顿时黑线，string">
 <meta name="keywords" content="zerotop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="poi读取值">
 <meta property="og:url" content="http://yoursite.com/2018/10/10/poi读取值/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介excel中单元格看到的值并不是真实的值而且和自定义格式关系不是很密切 过程今天lz在用poi读取excel发现了一个奇怪的数值excel表中字面值：10月9日编辑值：2018/10/9读取值：43382   这明显不对啊，读取一波  cell.getCellType()预计是：Cell.CELL_TYPE_NUMERIC实际是：Cell.CELL_TYPE_STRING 这还玩毛线啊 Cel">
+<meta property="og:description" content="简介excel中单元格看到的值并不是真实的值而且和自定义格式关系不是很密切 过程今天lz在用poi读取excel发现了一个奇怪的数值excel表中：字面值：10月9日编辑值：2018/10/9读取值：43382 这明显不对啊，读取一波  cell.getCellType()预计是：Cell.CELL_TYPE_NUMERIC实际是：Cell.CELL_TYPE_STRING 顿时黑线，string">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-10T15:54:33.050Z">
+<meta property="og:updated_time" content="2018-10-10T16:14:37.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poi读取值">
-<meta name="twitter:description" content="简介excel中单元格看到的值并不是真实的值而且和自定义格式关系不是很密切 过程今天lz在用poi读取excel发现了一个奇怪的数值excel表中字面值：10月9日编辑值：2018/10/9读取值：43382   这明显不对啊，读取一波  cell.getCellType()预计是：Cell.CELL_TYPE_NUMERIC实际是：Cell.CELL_TYPE_STRING 这还玩毛线啊 Cel">
+<meta name="twitter:description" content="简介excel中单元格看到的值并不是真实的值而且和自定义格式关系不是很密切 过程今天lz在用poi读取excel发现了一个奇怪的数值excel表中：字面值：10月9日编辑值：2018/10/9读取值：43382 这明显不对啊，读取一波  cell.getCellType()预计是：Cell.CELL_TYPE_NUMERIC实际是：Cell.CELL_TYPE_STRING 顿时黑线，string">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -88,23 +88,23 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>excel中单元格看到的值并不是真实的值<br>而且和自定义格式关系不是很密切</p>
-<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>今天lz在用poi读取excel发现了一个奇怪的数值<br>excel表中<br>字面值：10月9日<br>编辑值：2018/10/9<br>读取值：43382  </p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>今天lz在用poi读取excel发现了一个奇怪的数值<br>excel表中：<br>字面值：10月9日<br>编辑值：2018/10/9<br>读取值：43382</p>
 <p>这明显不对啊，读取一波  cell.getCellType()<br>预计是：Cell.CELL_TYPE_NUMERIC<br>实际是：Cell.CELL_TYPE_STRING</p>
-<p>这还玩毛线啊 Cell.CELL_TYPE_STRING格式可以直接读取cell中的值<br>读完是43382  完全没法转化为日期格式啊<br>网上之前查过，所有的读取都是跟官方文档一致的方式<br>上一篇POI中提到过<br>虽然悲痛，但是还是要寻求解决方案  </p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>官方文档中说:</p>
-<blockquote>
-<p>cell.setCellType()不推荐<br>void setCellType(CellType cellType)<br>If what you want to do is get a String value for your numeric cell,   stop!. This is not the way to do it. Instead, for fetching the string   value of a numeric or boolean or date cell, use DataFormatter instead.</p>
-</blockquote>
-<p>所以  需要首先将cell转化为数字格式的，<br>再通过dataFormatter.formatRawCellContents读取值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if (DateFormateColumn.columnHeaders.contains(headerName)) &#123;</span><br><span class="line">    if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();</span><br><span class="line">        DataFormat dataFormat = sheet.getWorkbook().createDataFormat();</span><br><span class="line">        cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">        cell.setCellStyle(cellStyle);</span><br><span class="line">        val = dataFormatter.formatRawCellContents(cell.getNumericCellValue(), 0, CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">        System.out.println(val + &quot;       &quot; + cellStyle.getDataFormatString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>顿时黑线，string类型单元格只能读取原始值<br> Cell.CELL_TYPE_STRING格式可以直接读取cell中的值<br>读完是43382  完全没法转化为日期格式啊</p>
+<p>网上查了一下，  没有看到有人遇到这个鬼畜问题<br>所有的读取都是跟官方文档一致的方式(读取数值型会有扩展)<br>上一篇POI中提到过数据读取的方式<br>虽然悲痛，但是还是要寻求解决方案  </p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>尝试了n多种方法，无法读取到string值后格式化为原来的日期<br>查看了一下以下两个值：<br>cell.getCellStyle().getDataFormat()        ：0<br>cell.getCellStyle().getDataFormatString()  ：General<br>瞬间崩溃，如此坑爹新奇的单元格还是第一次见  </p>
+<p>官方文档中说:<br>cell.setCellType()不推荐<br>void setCellType(CellType cellType)<br>If what you want to do is get a String value for your numeric cell,   stop!. This is not the way to do it. Instead, for fetching the string   value of a numeric or boolean or date cell, use DataFormatter instead.</p>
+<p>所以  需要打算创建个数字格式cell，将值赋值进去<br>(需要设置cellStyle，但是内置的dataformate实在是少的可怜)<br>自定义:m”月”d”日”格式实际上没有用<br>有了数值类型的cell再通过dataFormatter.formatRawCellContents读取值  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">    CellStyle cellStyle = sheet.getWorkbook().createCellStyle();</span><br><span class="line">    DataFormat dataFormat = sheet.getWorkbook().createDataFormat();</span><br><span class="line">    cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">    cell.setCellStyle(cellStyle);</span><br><span class="line">    val = dataFormatter.formatRawCellContents(cell.getNumericCellValue(), 0, CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>后来发现其实没必要那么麻烦<br>只需要两句即可  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (DateFormateColumn.columnHeaders.contains(headerName)) &#123;</span><br><span class="line">    if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">		cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">			val = dataFormatter.formatRawCellContents(cell.getNumericCellValue(), 0, CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">                        System.out.println(val + &quot;       &quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>搞定了。。。<br>大致就是cell重新设值，再读取就好了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">    cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">    val = dataFormatter.formatRawCellContents</span><br><span class="line">                       (cell.getNumericCellValue(), </span><br><span class="line">                        0, </span><br><span class="line">                       CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>搞定了。。。<br>大致就是cell重新设值，然后cell就变成了数字格式的了<br>再读取就好了，通过formatRawCellContents方法格式化值就好了<br>POI文章中有讲读取单元格值得<br>有兴趣可以移步去看看</p>
 <h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>val.matches(“^[0-9]+$”)<br>是为了判断当前cell中的值是否为整数</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjn3c4rba0006og20pfnnix2j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjn3cuyi10003n020f40ocgc7" class="article-share-link">Share</a>
       
       
     </footer>
