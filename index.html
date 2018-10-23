@@ -94,7 +94,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjnhjzutd0007p820uikfyvbi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjnlvub2o000e4820nvc8crfp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -141,11 +141,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">    cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">    val = dataFormatter.formatRawCellContents</span><br><span class="line">                       (cell.getNumericCellValue(), </span><br><span class="line">                        0, </span><br><span class="line">                       CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>搞定了。。。<br>大致就是cell重新设值，然后cell就变成了数字格式的了<br>再读取就好了，通过formatRawCellContents方法格式化值就好了<br>POI文章中有讲读取单元格值得<br>有兴趣可以移步去看看</p>
 <h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>val.matches(“^[0-9]+$”)<br>是为了判断当前cell中的值是否为整数</p>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>今天发现一个神奇的解析， </p>
+<p>201810<br>解析为：<br>2452-07-14</p>
+<p>累觉不爱<br>两种方案：<br>val.matches(“^[0-9]{5}$”)<br>一般都是43396  </p>
+<p>另一种:<br>if (val.matches(“^[0-9]+$”) &amp;&amp; val.length() &lt;  6) {<br>可能会有20181022  </p>
+<p>暂时只能见招拆招，有更好的解决方案，欢迎交流  </p>
+<p>需求。。。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjnhjzuu2000dp8204eg4u78i" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjnlvub2e00044820x0716h6g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poi/">poi</a></li></ul>
@@ -186,7 +192,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjnhjzutb0006p8203am2eop4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjnlvub2o00094820sgjzrdyq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -236,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjnhjzut60003p820bxzyz9u9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjnlvub2o000c4820pc2x8z2b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjnhjzuu4000ep82066t0v7ka" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjnlvub24000148203kf4y4si" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poi-excel/">poi, excel</a></li></ul>
@@ -335,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjnhjzutl0009p8206zd8fs0e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjnlvub2y000f4820dv9dprji" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjnhjzuta0005p820dgaxasgi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjnlvub2o000a4820r7027rkn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,7 +440,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjnhjzusy0001p820t8qbda4n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjnlvub2400024820p4l7xvlt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -483,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjnhjzut80004p82031nmw9fp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjnlvub2e000548202e3qtkvr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +528,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjnhjzuq60000p8206evabz2a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjnlvub1k00004820mp6vteow" class="article-share-link">Share</a>
       
       
     </footer>
