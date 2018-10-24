@@ -66,6 +66,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-cors" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/24/cors/" class="article-date">
+  <time datetime="2018-10-24T15:21:28.000Z" itemprop="datePublished">2018-10-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/24/cors/">cors</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>跨域是一个和 浏览器的同源策略 有关的东西<br>前后端分离开发经常会遇到这个问题  </p>
+<h3 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h3><p>ajax写的请求，访问后端接口<br>产生跨域</p>
+<p>这个时候可以用node代理解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var proxy = require(&apos;http-proxy-middleware&apos;);</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    target: &apos;http://xxx.xxx.xxx.xx:8888&apos;,</span><br><span class="line">    changeOrigin: true,</span><br><span class="line">    pathRewrite: &#123;</span><br><span class="line">        &apos;^/api/&apos; : &apos;http://xxx.xxx.xxx.xx:8888&apos;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var exampleProxy = proxy(options);  </span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;,exampleProxy);//对地址为’/‘的请求全部转发</span><br><span class="line"></span><br><span class="line">app.listen(8088);</span><br></pre></td></tr></table></figure></p>
+<p>比如<a href="http://localhost:8088/api/path" target="_blank" rel="noopener">http://localhost:8088/api/path</a><br>将会代理到 <a href="http://xxx.xxx.xxx.xx:8888/path" target="_blank" rel="noopener">http://xxx.xxx.xxx.xx:8888/path</a>  </p>
+<h3 id="场景2"><a href="#场景2" class="headerlink" title="场景2"></a>场景2</h3><p>每次请求都会导致重新创建session，导致登录后，显示未登录状态  </p>
+<p>这时候需要设置xhrFields:{withCredentials:true},<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax (&#123;</span><br><span class="line">	type: &quot;get&quot;,</span><br><span class="line">	url : &quot;http://xxx.xxx.xxx.xx:8888/account/userinfo&quot;,</span><br><span class="line">	xhrFields:&#123;withCredentials:true&#125;,</span><br><span class="line">	dataType: &quot;json&quot;,</span><br><span class="line">	success: function (json) &#123;</span><br><span class="line">		console.log(json)</span><br><span class="line">	&#125;,</span><br><span class="line">	error: function (err) &#123;</span><br><span class="line">		console.log(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>这时候会导致  Access-Control-Allow-Origin 一定要与请求的一致，<br>如果是通配符*则也会产生跨域问题  </p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>针对场景2，可以在后端设置<br>res.addHeader(“Access-Control-Allow-Origin”, req.getHeader(“Origin”));<br>res.setHeader(“Access-Control-Allow-Credentials”, “true”);</p>
+<p>上面这种设置理论上不是很合理  </p>
+<p>我们还可以将前端项目和node放到一起，前端项目和node之间不会有跨域问题<br>然后使用node代理  </p>
+<p>或者使用nigix配置代理  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjnnbzd6p0001yw20tevrtc13" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-权限验证" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/17/权限验证/" class="article-date">
@@ -94,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjnlvub2o000e4820nvc8crfp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjnnbzdjk000ayw200ap6ekcq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -151,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjnlvub2e00044820x0716h6g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjnnbzdk8000hyw20jznvu8s2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poi/">poi</a></li></ul>
@@ -192,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjnlvub2o00094820sgjzrdyq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjnnbzdjm000byw20vsfjvwxd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -242,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjnlvub2o000c4820pc2x8z2b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjnnbzdis0007yw20n0kuly4o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -291,7 +338,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjnlvub24000148203kf4y4si" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjnnbzd6e0000yw20ktyir0wy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poi-excel/">poi, excel</a></li></ul>
@@ -341,7 +388,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjnlvub2y000f4820dv9dprji" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjnnbzdio0006yw20mmjshqrx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -385,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjnlvub2o000a4820r7027rkn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjnnbzdju000dyw20xklz8rl3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -440,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjnlvub2400024820p4l7xvlt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjnnbzdiv0008yw203g8gnk1t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -489,46 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjnlvub2e000548202e3qtkvr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-first" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/19/first/" class="article-date">
-  <time datetime="2018-08-19T11:04:55.000Z" itemprop="datePublished">2018-08-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/19/first/">readme</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>github.io更新开始<br>以后会开始不定期更新一些技术内容  </p>
-<p>内容一般都是学到哪就分享到哪<br>有兴趣的可以一起交流</p>
-<p>公众号： zerotop<br>网站：  <a href="https://www.zerotop.top" target="_blank" rel="noopener">www.zerotop.top</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjnlvub1k00004820mp6vteow" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjnnbzdj00009yw20evk630e0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -588,6 +596,10 @@
       <ul>
         
           <li>
+            <a href="/2018/10/24/cors/">cors</a>
+          </li>
+        
+          <li>
             <a href="/2018/10/17/权限验证/">权限验证</a>
           </li>
         
@@ -601,10 +613,6 @@
         
           <li>
             <a href="/2018/09/30/Regular-expression/">Regular expression</a>
-          </li>
-        
-          <li>
-            <a href="/2018/09/25/POI/">POI</a>
           </li>
         
       </ul>
