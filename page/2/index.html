@@ -66,6 +66,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-google-plugins" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/28/google-plugins/" class="article-date">
+  <time datetime="2018-08-28T14:01:54.000Z" itemprop="datePublished">2018-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/28/google-plugins/">google-plugins</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="谷歌插件之csdn广告清理"><a href="#谷歌插件之csdn广告清理" class="headerlink" title="谷歌插件之csdn广告清理"></a>谷歌插件之csdn广告清理</h3><p>github: <a href="https://github.com/0top" target="_blank" rel="noopener">https://github.com/0top</a><br>公众号： zerotop</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>相信大家都用过csdn，估计也是深受其广告之害<br>在忍受很久csdn-“在职研究生…”等广告的侵袭后<br>终于决定去写个google插件去清一波广告  </p>
+<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>google插件写起来还是很轻松的，只需要去遵循一定的规范<br>google 插件文档: <a href="http://open.chrome.360.cn/extension_dev/manifest.html" target="_blank" rel="noopener">文档</a></p>
+<p>重要的就是manifest.json  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"manifest_version"</span>: 2,</span><br><span class="line">	<span class="string">"name"</span>: <span class="string">"csdn cleaner"</span>,</span><br><span class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="string">"description"</span>: <span class="string">"adv killer"</span>,</span><br><span class="line">	<span class="string">"icons"</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"16"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"48"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"128"</span>: <span class="string">"img/icon.png"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"browser_action"</span>: </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"default_icon"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"default_title"</span>: <span class="string">"csdn adv killer"</span>,</span><br><span class="line">		<span class="string">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"content_scripts"</span>: </span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"matches"</span>: [<span class="string">"https://*.csdn.net/*"</span>],</span><br><span class="line">			<span class="string">"js"</span>: [<span class="string">"js/jquery.js"</span>, <span class="string">"js/corejs.js"</span>],</span><br><span class="line">			<span class="string">"run_at"</span>: <span class="string">"document_start"</span></span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"homepage_url"</span>: <span class="string">"https://0top.github.io/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以及js/corejs.js(我自己写的js，及其简单)<br>然后按照一定的目录结构组织就好了<br><img src="/img/tree.png" alt="“目录结构”"><br>其他的直接搜索就可以了，或者直接看我项目源码  </p>
+<p>项目源码: <a href="https://github.com/0top/google-plugins" target="_blank" rel="noopener">https://github.com/0top/google-plugins</a> </p>
+<p>更新：<br>  如果使用document_end会在页面所有东西加载完后去广告，体验不好<br>  所以改用document_start时将js注入<br>  注入时会误删一些html，所以讲一部分广告改为hide()，<br>  效果会好很多，在页面加载出来即开始去广告，体验更流畅  </p>
+<p>更新:<br>  在加载完成后，自动展开阅读更多<br>
+        
+          <p class="article-more-link">
+            <a href="/2018/08/28/google-plugins/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjoiozeuy0005ks20r8pc8pad" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-tools" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/08/27/tools/" class="article-date">
@@ -106,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjoa72ko500076420crcuq1q5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="cjoiozey0000lks20r22p5ooo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjoa72kke00036420s1zjxyne" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="cjoiozeur0001ks20rnsrjor1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjoa72knx00046420sbbigev6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="cjoiozeux0004ks20ecvurs86" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,7 +286,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -248,6 +297,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/15/git-server/">git server</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/书/">书</a>
@@ -263,10 +316,6 @@
         
           <li>
             <a href="/2018/10/10/poi读取值/">poi读取值</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/05/中间件/">中间件</a>
           </li>
         
       </ul>

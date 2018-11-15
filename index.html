@@ -66,6 +66,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/15/git-server/" class="article-date">
+  <time datetime="2018-11-15T14:14:06.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/15/git-server/">git server</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们使用github时候，不花钱的话只能公开<br>于是我们便有了搭建git服务器的需求</p>
+<h3 id="git-服务器"><a href="#git-服务器" class="headerlink" title="git 服务器"></a>git 服务器</h3><p>git其实只是一款应用<br>我们可以在服务器上直接安装  </p>
+<p>安装后我们需要设置连接方式<br>可以使用无需密码的ssh连接方式</p>
+<p>具体过程正在试验<br>敬请期待</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>我们可以搭建git服务器<br>也可以再搭建一波wiki  </p>
+<p>祝大家可以玩更多骚操作</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjoiozeuv0003ks20u4vcfj6a" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-书" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/31/书/" class="article-date">
@@ -97,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjoa72kob000b6420vzbdbdro" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjoiozevc000aks20f8zdx4fr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjoa72kog000d6420llpw1e44" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjoiozevd000bks20b5af6rw4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +264,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjoa72kod000c6420s69u6jp1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjoiozevj000eks20eqzbz3rq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -262,24 +304,15 @@
 <p>顿时黑线，string类型单元格只能读取原始值<br> Cell.CELL_TYPE_STRING格式可以直接读取cell中的值<br>读完是43382  完全没法转化为日期格式啊</p>
 <p>网上查了一下，  没有看到有人遇到这个鬼畜问题<br>所有的读取都是跟官方文档一致的方式(读取数值型会有扩展)<br>上一篇POI中提到过数据读取的方式<br>虽然悲痛，但是还是要寻求解决方案  </p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>尝试了n多种方法，无法读取到string值后格式化为原来的日期<br>查看了一下以下两个值：<br>cell.getCellStyle().getDataFormat()        ：0<br>cell.getCellStyle().getDataFormatString()  ：General<br>瞬间崩溃，如此坑爹新奇的单元格还是第一次见  </p>
-<p>官方文档中说:<br>cell.setCellType()不推荐<br>void setCellType(CellType cellType)<br>If what you want to do is get a String value for your numeric cell,   stop!. This is not the way to do it. Instead, for fetching the string   value of a numeric or boolean or date cell, use DataFormatter instead.</p>
-<p>所以  需要打算创建个数字格式cell，将值赋值进去<br>(需要设置cellStyle，但是内置的dataformate实在是少的可怜)<br>自定义:m”月”d”日”格式实际上没有用<br>有了数值类型的cell再通过dataFormatter.formatRawCellContents读取值  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">    CellStyle cellStyle = sheet.getWorkbook().createCellStyle();</span><br><span class="line">    DataFormat dataFormat = sheet.getWorkbook().createDataFormat();</span><br><span class="line">    cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">    cell.setCellStyle(cellStyle);</span><br><span class="line">    val = dataFormatter.formatRawCellContents(cell.getNumericCellValue(), 0, CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>后来发现其实没必要那么麻烦<br>只需要两句即可  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if (val.matches(&quot;^[0-9]+$&quot;)) &#123;</span><br><span class="line">    cell.setCellValue(Double.parseDouble(val));</span><br><span class="line">    val = dataFormatter.formatRawCellContents</span><br><span class="line">                       (cell.getNumericCellValue(), </span><br><span class="line">                        0, </span><br><span class="line">                       CredbImporterConstants.DATE_FORMAT_STRING);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>搞定了。。。<br>大致就是cell重新设值，然后cell就变成了数字格式的了<br>再读取就好了，通过formatRawCellContents方法格式化值就好了<br>POI文章中有讲读取单元格值得<br>有兴趣可以移步去看看</p>
-<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>val.matches(“^[0-9]+$”)<br>是为了判断当前cell中的值是否为整数</p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>今天发现一个神奇的解析， </p>
-<p>201810<br>解析为：<br>2452-07-14</p>
-<p>累觉不爱<br>两种方案：<br>val.matches(“^[0-9]{5}$”)<br>一般都是43396  </p>
-<p>另一种:<br>if (val.matches(“^[0-9]+$”) &amp;&amp; val.length() &lt;  6) {<br>可能会有20181022  </p>
-<p>暂时只能见招拆招，有更好的解决方案，欢迎交流  </p>
-<p>需求。。。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/10/10/poi读取值/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjoa72ko800096420a45q0ek7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjoiozev40007ks20zi88xtea" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poi/">poi</a></li></ul>
@@ -322,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjoa72ko700086420gpf71wsv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjoiozeve000cks20l6nj78i7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -372,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjoa72koj000g6420u3rqjvcn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjoiozev90008ks209nsgwbnk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -411,17 +444,15 @@
 <p>excel表格中的单元格由不同的单元格格式具有不同的dataformate<br>但单元格内容决定因素是单元格中的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cell.getCellStyle().getDataFormat()  </span><br><span class="line">cell.getCellStyle().getDataFormatString()</span><br></pre></td></tr></table></figure></p>
 <p>cell中值七种形式:<br>_NONE、BLANK、BOOLEAN、ERROR、FORMULA、NUMERIC、STRING<br>首先对于numeric类型的cell，我们可以读取日历和数字格式<br>“@”即取文本格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC) &#123;</span><br><span class="line">  //日历   </span><br><span class="line">  if (DateUtil..isCellDateFormatted(cell)) &#123;</span><br><span class="line">	Date date = cell.getDateCellValue();</span><br><span class="line">    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span><br><span class="line">    val = sdf.format(date);</span><br><span class="line">  &#125;</span><br><span class="line">  if (format == 14 || format == 31 || format == 57 || format == 58  </span><br><span class="line">           || (176&lt;=format  &amp;&amp; format&lt;=184)) &#123;</span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;yyy-mm-dd&quot;);</span><br><span class="line">  &#125; else &#123; </span><br><span class="line">     val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>对于公式类型的，即单元格中的值通过其他单元格组合计算出来的<br>需要取出计算后的值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FormulaEvaluator evaluator = null;</span><br><span class="line">if (cell instanceof HSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new HSSFFormulaEvaluator((HSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">if (cell instanceof XSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new XSSFFormulaEvaluator((XSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">val = evaluator.evaluateFormulaCell(cell);</span><br></pre></td></tr></table></figure></p>
-<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>1.参考文档中的一句话：<br>If what you want to do is get a String value for your numeric cell, stop!. This is not the way to do it. Instead, for fetching the string value of a numeric or boolean or date cell, use DataFormatter instead.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DataFormatter formatter = new DataFormatter(&apos;zh&apos;, true);</span><br><span class="line">val = formatter.formatRawCellContents(cell.getNumericCellValue(), 0, &quot;@&quot;);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">2.对于excel中拆分已合并的单元格：  </span><br><span class="line">excel中合并单元格都将会将值填入最右上角的单元格中  </span><br><span class="line">所以可以先将合并的单元格全部取出，然后记录右上角的cell  </span><br><span class="line">先将removeMergedRegion(int index)单元格释放之后再填入值。  </span><br><span class="line">注意，如果批量拆分单元格。注意循环时每次释放合并的单元格时  </span><br><span class="line">合并单元格的数量都会减一。</span><br></pre></td></tr></table></figure></p>
-<p>int sum = sheet.getNumMergedRegions()<br>for (int i=0;i&lt;sum;i++) {<br>  CellRangeAddress cellAddr = cell.getMergedRegion(0);<br>  cell = sheet.getRow(cellAddr.getMinRow()).getColumn(cellAddr.getMinColumn())<br>  sheet.removeMergedRegion(0);<br>  //循环将cell值填入CellRangeAddress范围内的单元格中即可<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">3.对于sheet读取异常问题  </span><br><span class="line">有时候一个excel中可能会有很多sheet，不过sheet隐藏了  </span><br><span class="line">我们可以使用方法判断当前sheet是否是隐藏状态</span><br></pre></td></tr></table></figure></p>
-<p>book.isSheetHidden(book.getSheetIndex(sheet))<br><code>`</code></p>
-<p>4.poi文档中有内置的单元格格式<br><a href="https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-" target="_blank" rel="noopener">https://poi.apache.org/apidocs/org/apache/poi/ss/usermodel/BuiltinFormats.html#getBuiltinFormat-int-</a><br>在Class BuiltinFormats中指定The first user-defined number format starts at 164.<br>所以自定义的dataformate()会和日期重合<br>然后自定义的格式的dataformate()值是不定的，最好组合dataformateString去判断</p>
-<h3 id="关于poi的问题暂时说这么多"><a href="#关于poi的问题暂时说这么多" class="headerlink" title="关于poi的问题暂时说这么多"></a>关于poi的问题暂时说这么多</h3><h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>通过sheet获取的getLastRowNum()值偏大<br>currentRecordRow = sheet.getRow(currentRecordRowNum);<br>可能虽然在lastrownum范围内，但是可能取到的值为null<br>所以需要判断currentRecordRow是否为空以及row中的cell是否都为空</p>
-<p>未完待续。。。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2018/09/25/POI/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjoa72kix00006420idxdnze0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjoiozeul0000ks20yyyzy4w1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/poi-excel/">poi, excel</a></li></ul>
@@ -472,7 +503,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjoa72kok000h6420xpqex6dl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjoiozevm000hks20hwyhf4bk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -516,62 +547,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjoa72ko000056420aogwctjo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-google-plugins" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/28/google-plugins/" class="article-date">
-  <time datetime="2018-08-28T14:01:54.000Z" itemprop="datePublished">2018-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/28/google-plugins/">google-plugins</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="谷歌插件之csdn广告清理"><a href="#谷歌插件之csdn广告清理" class="headerlink" title="谷歌插件之csdn广告清理"></a>谷歌插件之csdn广告清理</h3><p>github: <a href="https://github.com/0top" target="_blank" rel="noopener">https://github.com/0top</a><br>公众号： zerotop</p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>相信大家都用过csdn，估计也是深受其广告之害<br>在忍受很久csdn-“在职研究生…”等广告的侵袭后<br>终于决定去写个google插件去清一波广告  </p>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>google插件写起来还是很轻松的，只需要去遵循一定的规范<br>google 插件文档: <a href="http://open.chrome.360.cn/extension_dev/manifest.html" target="_blank" rel="noopener">文档</a></p>
-<p>重要的就是manifest.json  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"manifest_version"</span>: 2,</span><br><span class="line">	<span class="string">"name"</span>: <span class="string">"csdn cleaner"</span>,</span><br><span class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="string">"description"</span>: <span class="string">"adv killer"</span>,</span><br><span class="line">	<span class="string">"icons"</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"16"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"48"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"128"</span>: <span class="string">"img/icon.png"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"browser_action"</span>: </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"default_icon"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"default_title"</span>: <span class="string">"csdn adv killer"</span>,</span><br><span class="line">		<span class="string">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"content_scripts"</span>: </span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"matches"</span>: [<span class="string">"https://*.csdn.net/*"</span>],</span><br><span class="line">			<span class="string">"js"</span>: [<span class="string">"js/jquery.js"</span>, <span class="string">"js/corejs.js"</span>],</span><br><span class="line">			<span class="string">"run_at"</span>: <span class="string">"document_start"</span></span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"homepage_url"</span>: <span class="string">"https://0top.github.io/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以及js/corejs.js(我自己写的js，及其简单)<br>然后按照一定的目录结构组织就好了<br><img src="/img/tree.png" alt="“目录结构”"><br>其他的直接搜索就可以了，或者直接看我项目源码  </p>
-<p>项目源码: <a href="https://github.com/0top/google-plugins" target="_blank" rel="noopener">https://github.com/0top/google-plugins</a> </p>
-<p>更新：<br>  如果使用document_end会在页面所有东西加载完后去广告，体验不好<br>  所以改用document_start时将js注入<br>  注入时会误删一些html，所以讲一部分广告改为hide()，<br>  效果会好很多，在页面加载出来即开始去广告，体验更流畅  </p>
-<p>更新:<br>  在加载完成后，自动展开阅读更多</p>
-<p>下面说说我在开发中遇到的几个问题吧：  </p>
-<h4 id="1-便是本地化问题"><a href="#1-便是本地化问题" class="headerlink" title="1.便是本地化问题"></a>1.便是本地化问题</h4><p> 这个就是有了_locals文件夹便一定要指定”default_local”属性<br>如果没有_locals文件夹则一定不能指定”default_local”属性  </p>
-<p>文档中比较清楚，可以看一下  </p>
-<p>default_locale<br>指定这个扩展保的缺省字符串的子目录：_lcoales。如果扩展有_locales目录，这个字段是必须的。 如果没有_locales目录，这个字段是必须不存在的。</p>
-<h4 id="2-图片格式"><a href="#2-图片格式" class="headerlink" title="2. 图片格式"></a>2. 图片格式</h4><p>icon等图片需要png格式<br>我用jpg并显示不出来  </p>
-<h4 id="3-关于popup-html点击链接不跳转的问题："><a href="#3-关于popup-html点击链接不跳转的问题：" class="headerlink" title="3.关于popup.html点击链接不跳转的问题："></a>3.关于popup.html点击链接不跳转的问题：</h4><p>首先链接开头必须是http/https<br>其次需要在a标签中指示 target=“_blank”  </p>
-<h4 id="4-删除元素方法："><a href="#4-删除元素方法：" class="headerlink" title="4. 删除元素方法："></a>4. 删除元素方法：</h4><p>jquery的 $(“#id”).remove()  可以直接删元素<br>比如：$(“aside”).remove()<br>或者根据id删除：<br>比如 : $(“#id”).remove()<br>或者根据class删除：<br>比如：$(“.class”).remove()  </p>
-<h3 id="google插件安装"><a href="#google插件安装" class="headerlink" title="google插件安装:"></a>google插件安装:</h3><p>google安装插件还是很简单的:<br>右上角选择更多工具-&gt;扩展程序   或者  点击设置-&gt;扩展程序<br>或者直接输地址:chrome://extensions/<br>首先开开发者模式-&gt;加载已解压的扩展程序-&gt;选择写好的插件的目录 就ok啦  </p>
-<p>然后便可以直接去拿一个csdn的博客页去做尝试了<br>我使用的还是效果不错的，有兴趣的可以一起交流  </p>
-<h3 id="新的想法"><a href="#新的想法" class="headerlink" title="新的想法"></a>新的想法</h3><p>可以尝试做一个在看javadocs时可以自动生成类或者接口的继承图<br>个人感觉可以用得到</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjoa72ko200066420a4ys124d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="cjoiozevl000gks20ov33846s" class="article-share-link">Share</a>
       
       
     </footer>
@@ -618,7 +594,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -629,6 +605,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/15/git-server/">git server</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/书/">书</a>
@@ -644,10 +624,6 @@
         
           <li>
             <a href="/2018/10/10/poi读取值/">poi读取值</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/05/中间件/">中间件</a>
           </li>
         
       </ul>

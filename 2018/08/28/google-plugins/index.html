@@ -16,7 +16,7 @@
 <meta property="og:description" content="谷歌插件之csdn广告清理github: https://github.com/0top公众号： zerotop 简介相信大家都用过csdn，估计也是深受其广告之害在忍受很久csdn-“在职研究生…”等广告的侵袭后终于决定去写个google插件去清一波广告   规范google插件写起来还是很轻松的，只需要去遵循一定的规范google 插件文档: 文档 重要的就是manifest.json   1">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/tree.png">
-<meta property="og:updated_time" content="2018-10-20T14:41:44.678Z">
+<meta property="og:updated_time" content="2018-11-15T14:29:11.443Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="google-plugins">
 <meta name="twitter:description" content="谷歌插件之csdn广告清理github: https://github.com/0top公众号： zerotop 简介相信大家都用过csdn，估计也是深受其广告之害在忍受很久csdn-“在职研究生…”等广告的侵袭后终于决定去写个google插件去清一波广告   规范google插件写起来还是很轻松的，只需要去遵循一定的规范google 插件文档: 文档 重要的就是manifest.json   1">
@@ -97,7 +97,7 @@
 <p>以及js/corejs.js(我自己写的js，及其简单)<br>然后按照一定的目录结构组织就好了<br><img src="/img/tree.png" alt="“目录结构”"><br>其他的直接搜索就可以了，或者直接看我项目源码  </p>
 <p>项目源码: <a href="https://github.com/0top/google-plugins" target="_blank" rel="noopener">https://github.com/0top/google-plugins</a> </p>
 <p>更新：<br>  如果使用document_end会在页面所有东西加载完后去广告，体验不好<br>  所以改用document_start时将js注入<br>  注入时会误删一些html，所以讲一部分广告改为hide()，<br>  效果会好很多，在页面加载出来即开始去广告，体验更流畅  </p>
-<p>更新:<br>  在加载完成后，自动展开阅读更多</p>
+<p>更新:<br>  在加载完成后，自动展开阅读更多<br><a id="more"></a></p>
 <p>下面说说我在开发中遇到的几个问题吧：  </p>
 <h4 id="1-便是本地化问题"><a href="#1-便是本地化问题" class="headerlink" title="1.便是本地化问题"></a>1.便是本地化问题</h4><p> 这个就是有了_locals文件夹便一定要指定”default_local”属性<br>如果没有_locals文件夹则一定不能指定”default_local”属性  </p>
 <p>文档中比较清楚，可以看一下  </p>
@@ -112,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjoa72ko200066420a4ys124d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="cjoiozeuy0005ks20r8pc8pad" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +171,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -182,6 +182,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/11/15/git-server/">git server</a>
+          </li>
         
           <li>
             <a href="/2018/10/31/书/">书</a>
@@ -197,10 +201,6 @@
         
           <li>
             <a href="/2018/10/10/poi读取值/">poi读取值</a>
-          </li>
-        
-          <li>
-            <a href="/2018/10/05/中间件/">中间件</a>
           </li>
         
       </ul>
