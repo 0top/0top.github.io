@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjpcpp9lw000h1w201n8etw9r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjpjswnmb000k1o20xq4gf9x8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -134,15 +134,15 @@
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们使用github时候，不花钱的话只能公开<br>于是我们便有了搭建git服务器的需求</p>
 <h3 id="git-服务器"><a href="#git-服务器" class="headerlink" title="git 服务器"></a>git 服务器</h3><p>git其实只是一款应用<br>我们可以在服务器上直接安装  </p>
 <p>安装后我们需要设置连接方式<br>可以使用无需密码的ssh连接方式</p>
-<p>重点是需要将本地公钥传到服务器上，即id_rsa.pub<br>我们可以通过git bash在本地生成ssh key<br>然后将公钥写入服务器git中的authorized_keys</p>
-<p>过程类似github.io使用ssh方式上传，详细之后有时间再更新</p>
+<p>重点是需要将本地公钥传到服务器上，即id_rsa.pub<br>我们可以使用git bash在本地生成ssh key<br>然后将公钥写入服务器git中的authorized_keys</p>
+<p>过程类似github项目使用ssh方式上传，详细之后有时间再更新</p>
 <h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>我们可以搭建git服务器<br>也可以再搭建一波wiki  </p>
 <p>祝大家可以玩更多骚操作</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjpcpp9lc00061w20fisht3jm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjpjswnlh00041o20sd11sm5m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -196,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjpcpp9lo000d1w20lm0ua15s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjpjswnm1000g1o207almx2vc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
@@ -230,21 +230,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>此篇文章是在下html结合ajax时出现的问题<br>以下是从遇到跨域问题，到一步步解决的过程<br>如果需要了解的可以看看  </p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>此篇文章是在使用纯html结合ajax时发送请求时<br>遇到跨域问题，并且一步步解决的过程  </p>
 <p>微信公众号：zerotop(私信联系方式，我会联系您的)<br>github: <a href="https://github.com/0top" target="_blank" rel="noopener">https://github.com/0top</a></p>
-<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>跨域是一个和 浏览器的同源策略 有关的东西<br>前后端分离开发经常会遇到这个问题  </p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>跨域是一个和浏览器的同源策略有关的东西<br>前后端分离开发经常会遇到这个问题  </p>
 <p>三种解决方案:</p>
 <p>1.jsonp：  </p>
-<p>jsonp方案需要后端配合，所以最好使用node将数据转发到后端</p>
-<p>然后再通过拼接jsonp的callback函数</p>
-<p>通过服务器端转发请求也可以</p>
+<p>jsonp方案需要后端配合，所以最好使用node将数据转发到后端<br>接收到数据后再通过拼接jsonp的callback()函数<br>通过服务器端转发请求也可以</p>
 <p>2.设置代理： </p>
 <p>代理暂时使用node中间件或者可以配置nigix代理</p>
 <p>3.后端允许跨域:</p>
 <p>cors跨域资源共享</p>
 <h3 id="场景1"><a href="#场景1" class="headerlink" title="场景1"></a>场景1</h3><p>ajax请求后端接口时候<br>1.本地直接打开的静态页面<br>2.本地服务器(tomcat)打开的页面:<a href="http://localhost:8088" target="_blank" rel="noopener">http://localhost:8088</a>  </p>
 <p>请求远程地址:<a href="http://xxx.xxx.xxx.xx:8888" target="_blank" rel="noopener">http://xxx.xxx.xxx.xx:8888</a></p>
-<p>两个地址不同源，这个时候就会产生跨域问题</p>
+<p>打开页面地址和请求地址不同源，这个时候就会产生跨域问题</p>
 <p>这个时候可以用node代理解决(nigix代理之后会接触)  </p>
 <h3 id="场景1解决"><a href="#场景1解决" class="headerlink" title="场景1解决"></a>场景1解决</h3><p>直接使用node后端设置代理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var proxy = require(&apos;http-proxy-middleware&apos;);</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var options = &#123;</span><br><span class="line">    target: &apos;http://xxx.xxx.xxx.xx:8888&apos;,</span><br><span class="line">    changeOrigin: true,</span><br><span class="line">    pathRewrite: &#123;</span><br><span class="line">        &apos;^/api/&apos; : &apos;http://xxx.xxx.xxx.xx:8888&apos;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var exampleProxy = proxy(options);  </span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;,exampleProxy);//对地址为’/‘的请求全部转发</span><br><span class="line"></span><br><span class="line">app.listen(8088);</span><br></pre></td></tr></table></figure></p>
 <p>这样可以将:   <a href="http://xxx.xxx.xxx.xx:8088/api/info" target="_blank" rel="noopener">http://xxx.xxx.xxx.xx:8088/api/info</a><br>请求全部转发到:<a href="http://xxx.xxx.xxx.xx:8888/info" target="_blank" rel="noopener">http://xxx.xxx.xxx.xx:8888/info</a></p>
@@ -257,9 +255,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjpcpp9la00051w20s1mu5cth" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjpjswnl700011o202byzhok7" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+
     </footer>
   </div>
   
@@ -298,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjpcpp9lu000g1w20plvhyekf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjpjswnmb000j1o20js3ya8bj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -346,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjpcpp9lh000a1w200relmaot" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjpjswnm1000c1o20edwmjfon" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POI/">POI</a></li></ul>
@@ -389,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjpcpp9li000b1w20bj8hinjf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjpjswnm1000f1o20whe7jimm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -439,7 +439,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjpcpp9l000021w20qyot6jy4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="cjpjswnn5000t1o20eerof8t9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -486,7 +486,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjpcpp9kx00011w209zgtiea9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="cjpjswnkx00001o20avvbmx5k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POI/">POI</a></li></ul>
@@ -537,7 +537,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjpcpp9mb000r1w20bv1x4cn3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="cjpjswnm1000d1o20lrk78aoy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -565,7 +565,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
@@ -575,7 +575,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a>
+      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
