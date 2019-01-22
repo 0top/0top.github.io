@@ -66,6 +66,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/01/22/mysql/" class="article-date">
+  <time datetime="2019-01-22T14:35:14.000Z" itemprop="datePublished">2019-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/22/mysql/">mysql</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本篇文章内容为：服务器上mysql连接</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>服务器上安装过程直接搜索即可<br>安装后我们需要再本地连接数据库<br>由此我们需要设置特定用户，并且设置特定权限  </p>
+<p>创建用户名和密码都为root并且访问全部数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;username&apos;@&apos;%&apos; IDENTIFIED BY &apos;passwd&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>无密码用户访问全部数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;username&apos;@&apos;%&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>有密码用户访问指定数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on tablename.* to &apos;username&apos;@&apos;%&apos; identified by &apos;passwd&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>创建用户之后，我们需要<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges</span><br></pre></td></tr></table></figure></p>
+<p>使修改生效</p>
+<p>这之后重启mysql服务即可连接<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>执行上述步骤后，有可能仍会出现10061错误，无法连接</p>
+<p>这可能是我们数据库绑定localhost</p>
+<p>需要去修改配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/mysql/my.conf</span><br></pre></td></tr></table></figure></p>
+<p>中修改bind_address=0.0.0.0</p>
+<p>ubuntu中需要修改的地址为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure></p>
+<p>重启服务即可</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="cjr7viil0000c3k20dp32kz3r" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-atomic" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/08/atomic/" class="article-date">
@@ -95,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjqz7whzr00022820khqeyzh2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjr7viikh00043k20deu71ee9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -135,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/30/2018总结/" data-id="cjqz7whtt00002820g71t2yxi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/30/2018总结/" data-id="cjr7viiit00003k20d10lik0c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="cjqz7whz300012820kymnksjy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="cjr7viikj00053k20v0ukc2hp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +266,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjqz7wi0y000m2820cvakv9mi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjr7viilg000m3k200gvclbng" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -262,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjqz7wi0400072820vqt12oei" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjr7viikl00073k20vjlq4kzg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -316,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjqz7wi0m000h2820ff0e10d3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjr7viild000j3k20qs6iiz7q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
@@ -375,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjqz7whzx00042820cogaz2pl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjr7viikn00083k20hne3jvy4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -418,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjqz7wi0n000j2820bme7vd1n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjr7viili000n3k202wzkxvnu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -466,53 +516,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjqz7wi0s000l2820qqhrei3j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="cjr7viil8000g3k20lf80m6df" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POI/">POI</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-中间件" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/05/中间件/" class="article-date">
-  <time datetime="2018-10-05T14:21:48.000Z" itemprop="datePublished">2018-10-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/05/中间件/">中间件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>本篇文章主要是讨论一些常用的中间件</p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>首先会使用rabbitmq<br>rabbitmq支持stomp协议</p>
-<p>安装rabbitmq需要安装Erlang(需要翻墙)</p>
-<h3 id="node中间件"><a href="#node中间件" class="headerlink" title="node中间件"></a>node中间件</h3><p>在解决跨域问题时，使用到了node端中间件<br>var proxy = require(‘http-proxy-middleware’);<br>可以直接将请求代理到后端，后端无需设置跨域  </p>
-<h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><p>tomcat等容器也算是中间件</p>
-<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="cjqz7wi0k000f2820e9vhehjw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
 
     </footer>
   </div>
@@ -571,6 +578,10 @@
       <ul>
         
           <li>
+            <a href="/2019/01/22/mysql/">mysql</a>
+          </li>
+        
+          <li>
             <a href="/2019/01/08/atomic/">atomic</a>
           </li>
         
@@ -584,10 +595,6 @@
         
           <li>
             <a href="/2018/11/27/数据库/">数据库</a>
-          </li>
-        
-          <li>
-            <a href="/2018/11/15/git-server/">git server</a>
           </li>
         
       </ul>
