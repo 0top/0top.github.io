@@ -90,12 +90,19 @@
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>最新需要写一个桌面可以运行程序，暂时选定用pyqt5进行开发<br>以下是开发路上一点心得</p>
 <h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><p>pyqt5 + qt designer<br>打包使用pyinstaller</p>
-<h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><p>留坑</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://riverbankcomputing.com/software/pyqt/download5/</span><br><span class="line"></span><br><span class="line">pip3 install PyQt5</span><br></pre></td></tr></table></figure>
+<p>在安装pyqt时<br>Pyqt5安装超时，需要换安装源<a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a> </p>
+<p>windows文件夹下搜:%APPDATA%<br>AppData/Roaming文件夹下创建文件夹pip<br>pip文件夹下创建pip.ini  写入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">timeout = 6000</span><br><span class="line">index-url = http://pypi.douban.com/simple</span><br><span class="line">trusted-host = pypi.douban.com</span><br></pre></td></tr></table></figure></p>
+<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5 -i https://pypi.douban.com/simple</span><br></pre></td></tr></table></figure></p>
+<p>安装pyqt5-toos<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5-tools</span><br></pre></td></tr></table></figure></p>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pip3 install pyinstaller</span><br></pre></td></tr></table></figure>
+<p>通过pyinstaller打包成exe</p>
+<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>项目中如果有引入下级包，打包的项目必须在最顶级<br>如果引入图片，需要绝对路径</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="cjs0gatlb000h6w20j1a2c2wd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="cjtgvoy9g000gyg208gxv21o8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="cjs0gatmp000s6w20ozzq6fqk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="cjtgvoy8m000fyg20rulte14z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -184,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjs0gatjf00036w20llv7jqc3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjtgvoy020001yg20nzy0faio" class="article-share-link">Share</a>
       
       
     </footer>
@@ -224,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/30/2018总结/" data-id="cjs0gatil00006w20hh497k85" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/30/2018总结/" data-id="cjtgvoxzj0000yg20h4s7nlgc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="cjs0gatmp000u6w20gz1v91rt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="cjtgvoy0n0005yg20hxqasjgc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjs0gatmf000m6w2087oyevkj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjtgvoya3000myg20abaj203y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -353,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjs0gatjf00076w202wq0ft2v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjtgvoy0t0009yg205virn2w0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -407,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjs0gatmf000k6w20brotj5gv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjtgvoy9y000jyg20yshnuxaq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
@@ -466,7 +473,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjs0gatjf00056w20zzxzfxw6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjtgvoy0r0007yg209jqsa2di" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -509,7 +516,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjs0gatmf000n6w20ptwe6kl0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjtgvoyac000nyg208ce1diti" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
