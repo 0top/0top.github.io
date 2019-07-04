@@ -7,18 +7,18 @@
   
   <title>atomic | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介原子操作 线程安全 CAScompare and swap 类AtomicBooleanAtomicIntegerAtomicLong">
+  <meta name="description" content="简介原子操作 线程安全 CAScompare and swap 简单讲就是如果想要替换的数据不是现在的数据吗，则拒绝替换即原始值为A，想将A替换为B时，原始值已经变成了C，这意味着已经有程序改动了原始值，则不进行值替换 disruptor使用CAS算法不是用锁解决并发问题需要的朋友可以去查看一下 类AtomicBooleanAtomicIntegerAtomicLong">
 <meta name="keywords" content="zerotop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="atomic">
 <meta property="og:url" content="http://yoursite.com/2019/01/08/atomic/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介原子操作 线程安全 CAScompare and swap 类AtomicBooleanAtomicIntegerAtomicLong">
+<meta property="og:description" content="简介原子操作 线程安全 CAScompare and swap 简单讲就是如果想要替换的数据不是现在的数据吗，则拒绝替换即原始值为A，想将A替换为B时，原始值已经变成了C，这意味着已经有程序改动了原始值，则不进行值替换 disruptor使用CAS算法不是用锁解决并发问题需要的朋友可以去查看一下 类AtomicBooleanAtomicIntegerAtomicLong">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T15:34:12.902Z">
+<meta property="og:updated_time" content="2019-07-04T15:24:17.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="atomic">
-<meta name="twitter:description" content="简介原子操作 线程安全 CAScompare and swap 类AtomicBooleanAtomicIntegerAtomicLong">
+<meta name="twitter:description" content="简介原子操作 线程安全 CAScompare and swap 简单讲就是如果想要替换的数据不是现在的数据吗，则拒绝替换即原始值为A，想将A替换为B时，原始值已经变成了C，这意味着已经有程序改动了原始值，则不进行值替换 disruptor使用CAS算法不是用锁解决并发问题需要的朋友可以去查看一下 类AtomicBooleanAtomicIntegerAtomicLong">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -89,12 +89,14 @@
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>原子操作 线程安全</p>
 <h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p>compare and swap</p>
+<p>简单讲就是如果想要替换的数据不是现在的数据吗，则拒绝替换<br>即原始值为A，想将A替换为B时，原始值已经变成了C，这意味着已经有程序改动了原始值，则不进行值替换</p>
+<p>disruptor使用CAS算法不是用锁解决并发问题<br>需要的朋友可以去查看一下</p>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>AtomicBoolean<br>AtomicInteger<br>AtomicLong</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjvmhnd9k0003k020cmnb40m0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjxotnqye00017c2083zvj0g4" class="article-share-link">Share</a>
       
       
     </footer>
