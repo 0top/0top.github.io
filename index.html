@@ -66,6 +66,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-CQEngine" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/10/CQEngine/" class="article-date">
+  <time datetime="2019-07-10T12:47:46.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/10/CQEngine/">CQEngine</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>CQEngine是一款开源的集合查询引擎，有了CQEngine，我们可以使用SQL-LIKE的方式进行java集合的查询。</p>
+<p>CQEngine可以进行毫秒级查询。相应速度微妙级。</p>
+<p>CQEngine中有index的概念，可以给不同的属性字段添加index，在查询时可以大大加快速度。</p>
+<p>支持嵌套查询。</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>CQEngine只针对查询做优化，查询后的结果可以转为stream操作获取到数据。<br>针对大量数据，stream转集合实际上会比普通stream慢很多。<br>CQEngine主要是针对查询做的优化，在查询时可以进行排序，但是重新排序意味着数据整体结构的改变，添加排序会花相对较多的时间。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="cjxx93y650001no200x3aidru" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pyqt5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/11/pyqt5/" class="article-date">
@@ -104,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="cjxotnqzp000k7c20u4heqfj2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="cjxx93y8a000gno20vjcqinht" class="article-share-link">Share</a>
       
       
     </footer>
@@ -154,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="cjxotnqzc000e7c20cjh6nr5r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="cjxx93y86000fno20p0w70gf8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -186,8 +227,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>原子操作 线程安全</p>
-<h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p>compare and swap</p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>为解决高并发情况下线程安全问题，synchronized使用悲观锁效率低。<br>原子操作 线程安全</p>
+<h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p>乐观锁策略<br>compare and swap</p>
 <p>简单讲就是如果想要替换的数据不是现在的数据吗，则拒绝替换<br>即原始值为A，想将A替换为B时，原始值已经变成了C，这意味着已经有程序改动了原始值，则不进行值替换</p>
 <p>disruptor使用CAS算法不是用锁解决并发问题<br>需要的朋友可以去查看一下</p>
 <h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>AtomicBoolean<br>AtomicInteger<br>AtomicLong</p>
@@ -195,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjxotnqye00017c2083zvj0g4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="cjxx93y7b0002no20vpgc97hb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -235,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/30/2018总结/" data-id="cjxotnqzh000i7c20ym8to5vx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/30/2018总结/" data-id="cjxx93y5w0000no20t53rz9mm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="cjxotnqz4000a7c20tt5ra0pi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="cjxx93y80000cno20xma9gz1k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjxotnqzu000p7c20wxch7lhi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="cjxx93y8q000ono20pci9unj0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -353,19 +394,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们使用github时候，不花钱的话只能公开<br>于是我们便有了搭建git服务器的需求</p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们使用github时候，不花钱的话只能公开(最近可以将项目private)<br>于是我们便有了搭建git服务器的需求</p>
 <h3 id="git-服务器"><a href="#git-服务器" class="headerlink" title="git 服务器"></a>git 服务器</h3><p>git其实只是一款应用<br>我们可以在服务器上直接安装  </p>
 <p>安装后我们需要设置连接方式<br>可以使用无需密码的ssh连接方式</p>
 <p>重点是需要将本地公钥传到服务器上，即id_rsa.pub<br>我们可以使用git bash在本地生成ssh key<br>然后将公钥写入服务器git中的authorized_keys</p>
 <p>过程类似github项目使用ssh方式上传，详细之后有时间再更新</p>
 <h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>服务器上创建一个项目<br>在本地项目中添加远程地址<br>即可以提交到服务器中的git项目上，供多人合作</p>
-<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>我们可以搭建git服务器<br>也可以再搭建一波wiki  </p>
-<p>祝大家可以玩更多骚操作</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>在搭建git服务器同时，也可以再搭建一波wiki  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjxotnqyy00067c20idu7xtgn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="cjxx93y7n0006no20m8k0be1s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -419,7 +459,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjxotnqzs000m7c20dcmijzvl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="cjxx93y8o000mno2045wldldt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
@@ -478,53 +518,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjxotnqz000077c20y7o0vvw2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="cjxx93y7w000bno202e4u5t3m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-权限验证" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/17/权限验证/" class="article-date">
-  <time datetime="2018-10-17T14:15:34.000Z" itemprop="datePublished">2018-10-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/17/权限验证/">权限验证</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>shiro中权限管理<br>首先是角色<br>一个人对应多个角色<br>每个角色都拥有固定的权限<br>或者也可以给相关用户添加权限  </p>
-<p>相对于某个页面或者操作，我们都需要有对应的权限<br>在查询权限是，首先是针对当前用户查询其拥有的权限<br>然后进行授权操作  </p>
-<p>换取token过程对服务器性能要求比较高</p>
-<h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><p>0Auth2.0</p>
-<p>我们可以专门做一个高性能的认证服务器，从服务器中换取token，然后可以直接登录，而不用每次都去认证。可以在token中添加过期时间等信息。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="cjxotnqzq000l7c20q1l0uixo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
 
     </footer>
   </div>
@@ -537,7 +534,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -570,7 +567,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -581,6 +578,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/07/10/CQEngine/">CQEngine</a>
+          </li>
         
           <li>
             <a href="/2019/02/11/pyqt5/">pyqt5</a>
@@ -596,10 +597,6 @@
         
           <li>
             <a href="/2018/12/30/2018总结/">2018总结</a>
-          </li>
-        
-          <li>
-            <a href="/2018/12/19/clazz/">clazz</a>
           </li>
         
       </ul>
