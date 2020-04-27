@@ -103,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ck9bg3x7h0008t820s39ir9g6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ck9imzy6d000br82007yhibs0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +127,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/20/云部署/">云部署</a>
+      <a class="article-title" href="/2020/04/20/云部署/">容器化部署</a>
     </h1>
   
 
@@ -135,16 +135,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用k8s集群模式进行项目部署与管理。</p>
-<p>将jenkins整合进入，</p>
-<p>helm整理不同环境configMap配置环境参数</p>
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>使用k8s集群模式进行项目部署与管理。</p>
+<p>使用gitlab/jenkins整合进行CI/CD</p>
+<p>通过helm整理不同环境configMap配置环境参数</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/20/云部署/" data-id="ck9bg3x7w000kt8209hu1n4pc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/20/云部署/" data-id="ck9imzy77000pr820ai9uwxho" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/k8s/">k8s</a></li></ul>
+
     </footer>
   </div>
   
@@ -183,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ck9bg3x6w0002t820ig1qvof2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ck9imzy630004r820ju90wxfa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -231,7 +233,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ck9bg3x7t000gt8205300fuir" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ck9imzy7h000xr820uk9qleyv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -281,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="ck9bg3xdt0010t82095de0ef3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="ck9imzy6n000er820d5lpo5o9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ck9bg3x6r0001t820xkmq88zi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ck9imzy5t0003r820txkcugdg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -364,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ck9bg3x7s000ft8204sue71oy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ck9imzy6x000hr8200i8gu10f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,17 +398,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>正常做项目我们可以选择使用<br>mybatis, JPA, Hibernate</p>
-<h3 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h3><p>可以直接写sql</p>
-<h3 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h3><p>可以通过名字代替sql<br>比如getUserByUserName</p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>正常做项目我们可以选择使用<br>mybatis, JPA</p>
+<h3 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h3><p>通过注解或者xml文件方式将java对象和sql语句映射成sql<br>通过框架进行执行，并返回最终结果。</p>
+<h3 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h3><p>实现对象/数据库表映射框架<br>支持使用原生sql，或者直接使用方法名进行数据库操作，涉及到更新操作时使用事务</p>
 <p>底层使用EntityManager进行持久化</p>
 <h3 id="spring-事务"><a href="#spring-事务" class="headerlink" title="spring 事务"></a>spring 事务</h3><p>在spring中使用事务需要在不同类调用方法时开启<br>或者通过代理拿到proxy对象<br>同级方法调用，及其调用的方法有开启事务的注解，注解也不会生效</p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>留坑</p>
-
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="ck9bg3x7y000mt820ofnei1m1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="ck9imzy77000rr820fzdgze2k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -446,12 +447,14 @@
 <p>重点是需要将本地公钥传到服务器上，即id_rsa.pub<br>我们可以使用git bash在本地生成ssh key<br>然后将公钥写入服务器git中的authorized_keys</p>
 <p>过程类似github项目使用ssh方式上传，详细之后有时间再更新</p>
 <h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>服务器上创建一个项目<br>在本地项目中添加远程地址<br>即可以提交到服务器中的git项目上，供多人合作</p>
+<h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><p>我们可以通过生成ssh的方式拉取远程代码库的代码<br>我们可以ssh-key保存到windows或其他凭据中，下一次再认证是不需要重复输入密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -f test   -C &quot;test key&quot;</span><br></pre></td></tr></table></figure>
 <h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>在搭建git服务器同时，也可以再搭建一波wiki  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="ck9bg3x7p000ct820fwaf0r0f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="ck9imzy630006r8204p0f4xyg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -505,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="ck9bg3x81000qt82005utchfr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="ck9imzy6x000kr820yifek6qo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
@@ -535,7 +538,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s/">k8s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
@@ -545,7 +548,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -571,7 +574,7 @@
           </li>
         
           <li>
-            <a href="/2020/04/20/云部署/">云部署</a>
+            <a href="/2020/04/20/云部署/">容器化部署</a>
           </li>
         
           <li>

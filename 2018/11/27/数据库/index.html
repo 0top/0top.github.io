@@ -7,18 +7,18 @@
   
   <title>数据库 | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介正常做项目我们可以选择使用mybatis, JPA, Hibernate mybatis可以直接写sql JPA可以通过名字代替sql比如getUserByUserName 底层使用EntityManager进行持久化 spring 事务在spring中使用事务需要在不同类调用方法时开启或者通过代理拿到proxy对象同级方法调用，及其调用的方法有开启事务的注解，注解也不会生效 后记留坑">
+  <meta name="description" content="简介正常做项目我们可以选择使用mybatis, JPA mybatis通过注解或者xml文件方式将java对象和sql语句映射成sql通过框架进行执行，并返回最终结果。 JPA实现对象/数据库表映射框架支持使用原生sql，或者直接使用方法名进行数据库操作，涉及到更新操作时使用事务 底层使用EntityManager进行持久化 spring 事务在spring中使用事务需要在不同类调用方法时开启或者">
 <meta name="keywords" content="database">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库">
 <meta property="og:url" content="http://yoursite.com/2018/11/27/数据库/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介正常做项目我们可以选择使用mybatis, JPA, Hibernate mybatis可以直接写sql JPA可以通过名字代替sql比如getUserByUserName 底层使用EntityManager进行持久化 spring 事务在spring中使用事务需要在不同类调用方法时开启或者通过代理拿到proxy对象同级方法调用，及其调用的方法有开启事务的注解，注解也不会生效 后记留坑">
+<meta property="og:description" content="简介正常做项目我们可以选择使用mybatis, JPA mybatis通过注解或者xml文件方式将java对象和sql语句映射成sql通过框架进行执行，并返回最终结果。 JPA实现对象/数据库表映射框架支持使用原生sql，或者直接使用方法名进行数据库操作，涉及到更新操作时使用事务 底层使用EntityManager进行持久化 spring 事务在spring中使用事务需要在不同类调用方法时开启或者">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T16:42:07.671Z">
+<meta property="og:updated_time" content="2020-04-27T15:19:41.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库">
-<meta name="twitter:description" content="简介正常做项目我们可以选择使用mybatis, JPA, Hibernate mybatis可以直接写sql JPA可以通过名字代替sql比如getUserByUserName 底层使用EntityManager进行持久化 spring 事务在spring中使用事务需要在不同类调用方法时开启或者通过代理拿到proxy对象同级方法调用，及其调用的方法有开启事务的注解，注解也不会生效 后记留坑">
+<meta name="twitter:description" content="简介正常做项目我们可以选择使用mybatis, JPA mybatis通过注解或者xml文件方式将java对象和sql语句映射成sql通过框架进行执行，并返回最终结果。 JPA实现对象/数据库表映射框架支持使用原生sql，或者直接使用方法名进行数据库操作，涉及到更新操作时使用事务 底层使用EntityManager进行持久化 spring 事务在spring中使用事务需要在不同类调用方法时开启或者">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -87,17 +87,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>正常做项目我们可以选择使用<br>mybatis, JPA, Hibernate</p>
-<h3 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h3><p>可以直接写sql</p>
-<h3 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h3><p>可以通过名字代替sql<br>比如getUserByUserName</p>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>正常做项目我们可以选择使用<br>mybatis, JPA</p>
+<h3 id="mybatis"><a href="#mybatis" class="headerlink" title="mybatis"></a>mybatis</h3><p>通过注解或者xml文件方式将java对象和sql语句映射成sql<br>通过框架进行执行，并返回最终结果。</p>
+<h3 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h3><p>实现对象/数据库表映射框架<br>支持使用原生sql，或者直接使用方法名进行数据库操作，涉及到更新操作时使用事务</p>
 <p>底层使用EntityManager进行持久化</p>
 <h3 id="spring-事务"><a href="#spring-事务" class="headerlink" title="spring 事务"></a>spring 事务</h3><p>在spring中使用事务需要在不同类调用方法时开启<br>或者通过代理拿到proxy对象<br>同级方法调用，及其调用的方法有开启事务的注解，注解也不会生效</p>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>留坑</p>
-
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="ck9bg3x7y000mt820ofnei1m1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="ck9imzy77000rr820fzdgze2k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -139,7 +138,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s/">k8s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
@@ -149,7 +148,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -175,7 +174,7 @@
           </li>
         
           <li>
-            <a href="/2020/04/20/云部署/">云部署</a>
+            <a href="/2020/04/20/云部署/">容器化部署</a>
           </li>
         
           <li>
