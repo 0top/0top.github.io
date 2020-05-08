@@ -66,6 +66,93 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/08/docker/" class="article-date">
+  <time datetime="2020-05-08T14:22:38.000Z" itemprop="datePublished">2020-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/08/docker/">docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>docker：开源应用容器引擎，可将运行环境整体打包，可实现虚拟化<br>image： 镜像即容器的运行环境，通过生成镜像可将容器运行环境保存下来，方便copy</p>
+<h3 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h3><p>docker容器的镜像可以从docker hub上进行下载，如果项目无法联网，<br>也可以将镜像打包，在运行环境load出来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker save -o iamge image.tar</span><br><span class="line"></span><br><span class="line">docker load &lt; image.tar</span><br></pre></td></tr></table></figure>
+<h3 id="docker应用"><a href="#docker应用" class="headerlink" title="docker应用"></a>docker应用</h3><p>容器化部署项目k8s</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/08/docker/" data-id="ck9yavmg60006uo20pft04knm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/08/redis/" class="article-date">
+  <time datetime="2020-05-08T14:12:25.000Z" itemprop="datePublished">2020-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/08/redis/">redis</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>redis是一个开源NoSQL数据库，支持多种数据结构<br>使用频率相对高，需要共享的数据可以存在数据库中</p>
+<p>redis分为三种模式： 单点，集群, 哨兵模式</p>
+<h3 id="单点模式"><a href="#单点模式" class="headerlink" title="单点模式"></a>单点模式</h3><p>单点模式为最简单的模式，只需要连接一台redis，可切换数据库</p>
+<h3 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h3><p>主从复制模式，主节点宕机后，从节点将晋升为主节点<br>过程需要人工干预</p>
+<h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><p>支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换</p>
+<p>spring boot在使用哨兵模式时<br>程序将动态修改配置文件，主从自动切换</p>
+<h3 id="redis使用"><a href="#redis使用" class="headerlink" title="redis使用"></a>redis使用</h3><p>可用redis进行计数操作</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ck9yavmh5000vuo206191k624" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/noSql-redis/">noSql,redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-liquibase" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/04/22/liquibase/" class="article-date">
@@ -103,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ck9imzy6d000br82007yhibs0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ck9yavmgk000fuo2087ixsm40" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/20/云部署/" data-id="ck9imzy77000pr820ai9uwxho" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/20/云部署/" data-id="ck9yavmh2000suo20pft8jzly" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/k8s/">k8s</a></li></ul>
@@ -185,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ck9imzy630004r820ju90wxfa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ck9yavmex0000uo206tz8sr9g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ck9imzy7h000xr820uk9qleyv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ck9yavmhs0018uo201gq6zukk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="ck9imzy6n000er820d5lpo5o9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/22/mysql/" data-id="ck9yavmgx000nuo20atkwlery" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,7 +411,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ck9imzy5t0003r820txkcugdg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ck9yavmfk0002uo20hqyjk1mp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ck9imzy6x000hr8200i8gu10f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ck9yavmfq0004uo20eknokhcg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -407,111 +494,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="ck9imzy77000rr820fzdgze2k" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/数据库/" data-id="ck9yavmh9000zuo20avfku7ev" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git-server" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/11/15/git-server/" class="article-date">
-  <time datetime="2018-11-15T14:14:06.000Z" itemprop="datePublished">2018-11-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/15/git-server/">git server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们使用github时候，不花钱的话只能公开(最近可以将项目private)<br>于是我们便有了搭建git服务器的需求</p>
-<h3 id="git-服务器"><a href="#git-服务器" class="headerlink" title="git 服务器"></a>git 服务器</h3><p>git其实只是一款应用<br>我们可以在服务器上直接安装  </p>
-<p>安装后我们需要设置连接方式<br>可以使用无需密码的ssh连接方式</p>
-<p>重点是需要将本地公钥传到服务器上，即id_rsa.pub<br>我们可以使用git bash在本地生成ssh key<br>然后将公钥写入服务器git中的authorized_keys</p>
-<p>过程类似github项目使用ssh方式上传，详细之后有时间再更新</p>
-<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>服务器上创建一个项目<br>在本地项目中添加远程地址<br>即可以提交到服务器中的git项目上，供多人合作</p>
-<h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><p>我们可以通过生成ssh的方式拉取远程代码库的代码<br>我们可以ssh-key保存到windows或其他凭据中，下一次再认证是不需要重复输入密码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -f test   -C &quot;test key&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>在搭建git服务器同时，也可以再搭建一波wiki  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="ck9imzy630006r8204p0f4xyg" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-书" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/10/31/书/" class="article-date">
-  <time datetime="2018-10-31T15:25:45.000Z" itemprop="datePublished">2018-10-31</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/10/31/书/">书</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>人还是要有些追求的,本篇主要记录自己看的书<br>希望能在空余时间一直看下去  </p>
-<h3 id="书目"><a href="#书目" class="headerlink" title="书目"></a>书目</h3><ol>
-<li>基督山伯爵  </li>
-<li>罪与罚  </li>
-<li>人生若只如初见  </li>
-<li>鼠疫  </li>
-<li>人格裂变的姑娘(讲多重人格的)  </li>
-<li>肖申克的救赎</li>
-<li>国富论</li>
-<li>荆棘鸟</li>
-<li>安娜卡列宁娜</li>
-<li>较量</li>
-</ol>
-<h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><p>基督山伯爵:<br>故事很好，让人很有读下去的欲望<br>而且和希望遇到神甫那样睿智，强大的人</p>
-<p>人生若只如初见:<br>读了前一部分感觉古诗词真的很美</p>
-<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>个人见解，希望更优秀  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="ck9imzy6x000kr820yifek6qo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
 
     </footer>
   </div>
@@ -538,7 +524,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s/">k8s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s/">k8s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/noSql-redis/">noSql,redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
@@ -548,7 +534,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/noSql-redis/" style="font-size: 10px;">noSql,redis</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -557,7 +543,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -570,6 +556,14 @@
       <ul>
         
           <li>
+            <a href="/2020/05/08/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/08/redis/">redis</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/22/liquibase/">liquibase</a>
           </li>
         
@@ -579,14 +573,6 @@
         
           <li>
             <a href="/2019/07/10/CQEngine/">CQEngine</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/11/pyqt5/">pyqt5</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/22/mysql/">mysql</a>
           </li>
         
       </ul>

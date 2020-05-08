@@ -5,19 +5,20 @@
   
 
   
-  <title>Tag: database | zerotop</title>
+  <title>redis | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my github page">
-<meta name="keywords" content="zerotop">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zerotop">
-<meta property="og:url" content="http://yoursite.com/tags/database/index.html">
+  <meta name="description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 单点模式单点模式为最简单的模式，只需要连接一台redis，可切换数据库 集群模式主从复制模式，主节点宕机后，从节点将晋升为主节点过程需要人工干预 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 spring boot在使用">
+<meta name="keywords" content="noSql,redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="redis">
+<meta property="og:url" content="http://yoursite.com/2020/05/08/redis/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="my github page">
+<meta property="og:description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 单点模式单点模式为最简单的模式，只需要连接一台redis，可切换数据库 集群模式主从复制模式，主节点宕机后，从节点将晋升为主节点过程需要人工干预 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 spring boot在使用">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-08T14:22:02.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zerotop">
-<meta name="twitter:description" content="my github page">
+<meta name="twitter:title" content="redis">
+<meta name="twitter:description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 单点模式单点模式为最简单的模式，只需要连接一台redis，可切换数据库 集群模式主从复制模式，主节点宕机后，从节点将晋升为主节点过程需要人工干预 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 spring boot在使用">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -64,40 +65,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/27/数据库/" class="archive-article-date">
-  <time datetime="2018-11-27T14:01:58.000Z" itemprop="datePublished">Nov 27</time>
+        <section id="main"><article id="post-redis" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/08/redis/" class="article-date">
+  <time datetime="2020-05-08T14:12:25.000Z" itemprop="datePublished">2020-05-08</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/27/数据库/">数据库</a>
+    <h1 class="article-title" itemprop="name">
+      redis
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>redis是一个开源NoSQL数据库，支持多种数据结构<br>使用频率相对高，需要共享的数据可以存在数据库中</p>
+<p>redis分为三种模式： 单点，集群, 哨兵模式</p>
+<h3 id="单点模式"><a href="#单点模式" class="headerlink" title="单点模式"></a>单点模式</h3><p>单点模式为最简单的模式，只需要连接一台redis，可切换数据库</p>
+<h3 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h3><p>主从复制模式，主节点宕机后，从节点将晋升为主节点<br>过程需要人工干预</p>
+<h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><p>支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换</p>
+<p>spring boot在使用哨兵模式时<br>程序将动态修改配置文件，主从自动切换</p>
+<h3 id="redis使用"><a href="#redis使用" class="headerlink" title="redis使用"></a>redis使用</h3><p>可用redis进行计数操作</p>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ck9yavmh5000vuo206191k624" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/noSql-redis/">noSql,redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/05/08/docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          docker
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/22/liquibase/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">liquibase</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         

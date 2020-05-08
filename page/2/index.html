@@ -66,6 +66,107 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/11/15/git-server/" class="article-date">
+  <time datetime="2018-11-15T14:14:06.000Z" itemprop="datePublished">2018-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/15/git-server/">git server</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>我们使用github时候，不花钱的话只能公开(最近可以将项目private)<br>于是我们便有了搭建git服务器的需求</p>
+<h3 id="git-服务器"><a href="#git-服务器" class="headerlink" title="git 服务器"></a>git 服务器</h3><p>git其实只是一款应用<br>我们可以在服务器上直接安装  </p>
+<p>安装后我们需要设置连接方式<br>可以使用无需密码的ssh连接方式</p>
+<p>重点是需要将本地公钥传到服务器上，即id_rsa.pub<br>我们可以使用git bash在本地生成ssh key<br>然后将公钥写入服务器git中的authorized_keys</p>
+<p>过程类似github项目使用ssh方式上传，详细之后有时间再更新</p>
+<h3 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h3><p>服务器上创建一个项目<br>在本地项目中添加远程地址<br>即可以提交到服务器中的git项目上，供多人合作</p>
+<h3 id="ssh"><a href="#ssh" class="headerlink" title="ssh"></a>ssh</h3><p>我们可以通过生成ssh的方式拉取远程代码库的代码<br>我们可以ssh-key保存到windows或其他凭据中，下一次再认证是不需要重复输入密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -f test   -C &quot;test key&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>在搭建git服务器同时，也可以再搭建一波wiki  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="ck9yavmgc000auo2025a59veo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-书" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/31/书/" class="article-date">
+  <time datetime="2018-10-31T15:25:45.000Z" itemprop="datePublished">2018-10-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/31/书/">书</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>人还是要有些追求的,本篇主要记录自己看的书<br>希望能在空余时间一直看下去  </p>
+<h3 id="书目"><a href="#书目" class="headerlink" title="书目"></a>书目</h3><ol>
+<li>基督山伯爵  </li>
+<li>罪与罚  </li>
+<li>人生若只如初见  </li>
+<li>鼠疫  </li>
+<li>人格裂变的姑娘(讲多重人格的)  </li>
+<li>肖申克的救赎</li>
+<li>国富论</li>
+<li>荆棘鸟</li>
+<li>安娜卡列宁娜</li>
+<li>较量</li>
+</ol>
+<h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><p>基督山伯爵:<br>故事很好，让人很有读下去的欲望<br>而且和希望遇到神甫那样睿智，强大的人</p>
+<p>人生若只如初见:<br>读了前一部分感觉古诗词真的很美</p>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><p>个人见解，希望更优秀  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="ck9yavmgz000puo206l5bcdt7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-cors" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/10/24/cors/" class="article-date">
@@ -113,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="ck9imzy6n000dr8200udkmsyi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="ck9yavmgq000juo20vqc0o0iz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -156,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="ck9imzy77000sr820o5x1k9y9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/权限验证/" data-id="ck9yavmh7000xuo20bvug64sl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -204,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="ck9imzy6x000ir820lfuh1hqg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/poi读取值/" data-id="ck9yavmgo000iuo2063rn3l77" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POI/">POI</a></li></ul>
@@ -248,7 +349,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="ck9imzy77000or820afktpvzb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="ck9yavmgu000luo20ebb8qqkf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -300,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ck9imzy630005r8205flpvxfy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ck9yavmgi000euo2074t86xg6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -347,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="ck9imzy270000r820uc4gq0zr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="ck9yavmfg0001uo20dg1z2si0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/POI/">POI</a></li></ul>
@@ -398,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="ck9imzy77000tr820kq7irhp8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="ck9yavmgy000ouo20mdroi37j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -442,110 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="ck9imzy6x000gr82054juxinc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-google-plugins" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/28/google-plugins/" class="article-date">
-  <time datetime="2018-08-28T14:01:54.000Z" itemprop="datePublished">2018-08-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/28/google-plugins/">google-plugins</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="谷歌插件之csdn广告清理"><a href="#谷歌插件之csdn广告清理" class="headerlink" title="谷歌插件之csdn广告清理"></a>谷歌插件之csdn广告清理</h3><p>github: <a href="https://github.com/0top" target="_blank" rel="noopener">https://github.com/0top</a><br>公众号： zerotop</p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>相信大家都用过csdn，估计也是深受其广告之害<br>在忍受很久csdn-“在职研究生…”等广告的侵袭后<br>终于决定去写个google插件去清一波广告  </p>
-<h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><p>google插件写起来还是很轻松的，只需要去遵循一定的规范<br>google 插件文档: <a href="http://open.chrome.360.cn/extension_dev/manifest.html" target="_blank" rel="noopener">文档</a></p>
-<p>重要的就是manifest.json  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"manifest_version"</span>: 2,</span><br><span class="line">	<span class="string">"name"</span>: <span class="string">"csdn cleaner"</span>,</span><br><span class="line">	<span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">	<span class="string">"description"</span>: <span class="string">"adv killer"</span>,</span><br><span class="line">	<span class="string">"icons"</span>:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"16"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"48"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"128"</span>: <span class="string">"img/icon.png"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"browser_action"</span>: </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"default_icon"</span>: <span class="string">"img/icon.png"</span>,</span><br><span class="line">		<span class="string">"default_title"</span>: <span class="string">"csdn adv killer"</span>,</span><br><span class="line">		<span class="string">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">"content_scripts"</span>: </span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"matches"</span>: [<span class="string">"https://*.csdn.net/*"</span>],</span><br><span class="line">			<span class="string">"js"</span>: [<span class="string">"js/jquery.js"</span>, <span class="string">"js/corejs.js"</span>],</span><br><span class="line">			<span class="string">"run_at"</span>: <span class="string">"document_start"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"matches"</span>: [<span class="string">"&lt;all_urls&gt;"</span>],</span><br><span class="line">			<span class="string">"js"</span>: [<span class="string">"js/jquery.js"</span>, <span class="string">"js/corejs.js"</span>],</span><br><span class="line">			<span class="string">"run_at"</span>: <span class="string">"document_end"</span></span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"homepage_url"</span>: <span class="string">"https://0top.github.io/"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>以及js/corejs.js(我自己写的js，及其简单)<br>然后按照一定的目录结构组织就好了<br><img src="/img/tree.png" alt="“目录结构”"><br>其他的直接搜索就可以了，或者直接看我项目源码  </p>
-<p>项目源码: <a href="https://github.com/0top/google-plugins" target="_blank" rel="noopener">https://github.com/0top/google-plugins</a> </p>
-<p>更新：<br>  如果使用document_end会在页面所有东西加载完后去广告，体验不好<br>  所以改用document_start时将js注入<br>  注入时会误删一些html，所以讲一部分广告改为hide()，<br>  效果会好很多，在页面加载出来即开始去广告，体验更流畅  </p>
-<p>  关于一些网站直接为域名访问，可使用”matches”: [“&lt;all_urls&gt;”] 匹配<br>  在输入具体网站地址时，需要在具体域名后面添加/ 例如 <a href="https://www.xxx.com/" target="_blank" rel="noopener">https://www.xxx.com/</a>*</p>
-<p>更新:<br>  在加载完成后，自动展开阅读更多<br>
-        
-          <p class="article-more-link">
-            <a href="/2018/08/28/google-plugins/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="ck9imzy6d000ar820zwn2mvyr" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-tools" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/08/27/tools/" class="article-date">
-  <time datetime="2018-08-27T12:44:55.000Z" itemprop="datePublished">2018-08-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/27/tools/">dev tools</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h3><h3 id="java常用IDE："><a href="#java常用IDE：" class="headerlink" title="java常用IDE："></a>java常用IDE：</h3><p>myeclipse和idea：当然eclipse也可以，不过集成度高的ide有时候开发效率更高  </p>
-<h3 id="文档-："><a href="#文档-：" class="headerlink" title="文档 ："></a>文档 ：</h3><p>swagger-ui    直接在项目中添加配置，解耦前后端开发</p>
-<h3 id="google插件："><a href="#google插件：" class="headerlink" title="google插件："></a>google插件：</h3><p>postman/jsonviewer：   可以用来模拟请求，以及在google浏览器中查看json用  </p>
-<p>csdn cleaner: <a href="https://github.com/0top/google-plugins" target="_blank" rel="noopener">去csdn广告插件</a></p>
-<h3 id="数据库："><a href="#数据库：" class="headerlink" title="数据库："></a>数据库：</h3><p>navicat： mysql数据库常用工具</p>
-<h3 id="编辑器："><a href="#编辑器：" class="headerlink" title="编辑器："></a>编辑器：</h3><p>vs code/notepad++： 比记事本好用多了  </p>
-<h3 id="ftp"><a href="#ftp" class="headerlink" title="ftp:"></a>ftp:</h3><p>xftp:  可以连接服务器，或者本地虚拟机，上传文件等</p>
-<h3 id="远程连接："><a href="#远程连接：" class="headerlink" title="远程连接："></a>远程连接：</h3><p>xshell/secure CRT：  测试常用，自己需要也可以用，putty也可以，轻量级</p>
-<h3 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h3><p>有道云笔记/印象笔记：  印象笔记免费只能授权两台设备，不需要多端可以尝试<br>印象笔记可以插入代码段，还是很好的<br>markdownPad2 :    效果感人</p>
-<h3 id="虚拟机："><a href="#虚拟机：" class="headerlink" title="虚拟机："></a>虚拟机：</h3><p>vmware/virtual box:  可以本地装虚拟机，双系统不是很有必要(个人感觉)  </p>
-<h3 id="Sourcetree"><a href="#Sourcetree" class="headerlink" title="Sourcetree:"></a>Sourcetree:</h3><p>有兴趣可以查查, 版本管理神器  </p>
-<h3 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h3><p>regexbuddy </p>
-<h3 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h3><p>epud, Reader</p>
-<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>rabbitmq， qpid</p>
-<h3 id="wiki"><a href="#wiki" class="headerlink" title="wiki"></a>wiki</h3><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>jerkins</p>
-<h3 id="压测"><a href="#压测" class="headerlink" title="压测"></a>压测</h3><p>jemeter</p>
-<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>pyqt5    pyqt5-tools<br>         qt-designer</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="ck9imzy7h000wr82031l09kkt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="ck9yavmgm000guo20judqijw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -573,7 +571,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s/">k8s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/POI/">POI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/database/">database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k8s/">k8s</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/noSql-redis/">noSql,redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/other/">other</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shiro/">shiro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/中间件/">中间件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
     </div>
   </div>
 
@@ -583,7 +581,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/POI/" style="font-size: 20px;">POI</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/noSql-redis/" style="font-size: 10px;">noSql,redis</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -592,7 +590,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -605,6 +603,14 @@
       <ul>
         
           <li>
+            <a href="/2020/05/08/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/08/redis/">redis</a>
+          </li>
+        
+          <li>
             <a href="/2020/04/22/liquibase/">liquibase</a>
           </li>
         
@@ -614,14 +620,6 @@
         
           <li>
             <a href="/2019/07/10/CQEngine/">CQEngine</a>
-          </li>
-        
-          <li>
-            <a href="/2019/02/11/pyqt5/">pyqt5</a>
-          </li>
-        
-          <li>
-            <a href="/2019/01/22/mysql/">mysql</a>
           </li>
         
       </ul>
