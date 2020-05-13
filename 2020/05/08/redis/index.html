@@ -7,18 +7,18 @@
   
   <title>redis | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 单点模式单点模式为最简单的模式，只需要连接一台redis，可切换数据库 集群模式主从复制模式，主节点宕机后，从节点将晋升为主节点过程需要人工干预 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 spring boot在使用">
+  <meta name="description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 主从复制模式主从复制模式，将主节点数据同步至从节点，主节点切换时需要手动切换如果同步数据时出现问题，从节点会进行全量同步，导致redis毫秒或秒级别延时 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 redis存在主节点">
 <meta name="keywords" content="noSql,redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="redis">
 <meta property="og:url" content="http://yoursite.com/2020/05/08/redis/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 单点模式单点模式为最简单的模式，只需要连接一台redis，可切换数据库 集群模式主从复制模式，主节点宕机后，从节点将晋升为主节点过程需要人工干预 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 spring boot在使用">
+<meta property="og:description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 主从复制模式主从复制模式，将主节点数据同步至从节点，主节点切换时需要手动切换如果同步数据时出现问题，从节点会进行全量同步，导致redis毫秒或秒级别延时 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 redis存在主节点">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-08T14:22:02.692Z">
+<meta property="og:updated_time" content="2020-05-13T15:19:47.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="redis">
-<meta name="twitter:description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 单点模式单点模式为最简单的模式，只需要连接一台redis，可切换数据库 集群模式主从复制模式，主节点宕机后，从节点将晋升为主节点过程需要人工干预 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 spring boot在使用">
+<meta name="twitter:description" content="简介redis是一个开源NoSQL数据库，支持多种数据结构使用频率相对高，需要共享的数据可以存在数据库中 redis分为三种模式： 单点，集群, 哨兵模式 主从复制模式主从复制模式，将主节点数据同步至从节点，主节点切换时需要手动切换如果同步数据时出现问题，从节点会进行全量同步，导致redis毫秒或秒级别延时 哨兵模式支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换 redis存在主节点">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -89,16 +89,21 @@
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>redis是一个开源NoSQL数据库，支持多种数据结构<br>使用频率相对高，需要共享的数据可以存在数据库中</p>
 <p>redis分为三种模式： 单点，集群, 哨兵模式</p>
-<h3 id="单点模式"><a href="#单点模式" class="headerlink" title="单点模式"></a>单点模式</h3><p>单点模式为最简单的模式，只需要连接一台redis，可切换数据库</p>
-<h3 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h3><p>主从复制模式，主节点宕机后，从节点将晋升为主节点<br>过程需要人工干预</p>
+<h3 id="主从复制模式"><a href="#主从复制模式" class="headerlink" title="主从复制模式"></a>主从复制模式</h3><p>主从复制模式，将主节点数据同步至从节点，主节点切换时需要手动切换<br>如果同步数据时出现问题，从节点会进行全量同步，导致redis毫秒或秒级别延时</p>
 <h3 id="哨兵模式"><a href="#哨兵模式" class="headerlink" title="哨兵模式"></a>哨兵模式</h3><p>支持主节点存活检测，主从运行情况检查，自动故障转移，主从切换</p>
+<p>redis存在主节点和从节点，主节点写数据时将同步写入从节点数据<br>从节点具有主节点所有数据。</p>
+<p>redis客户端启动sentinel，每个sentinel按配置频率向所有节点发送消息<br>当主节点没有及时回复sentinel的消息将被标记为主观下线<br>超过配置sentinel节点确定主节点客观下线，适用主节点，则将协商选取一个sentinel，选出新的主节点  </p>
+<p>哨兵模式在一定程度上实现了高可用，但是主从都具有全部数据，相对浪费资源<br>由此衍生出集群模式</p>
 <p>spring boot在使用哨兵模式时<br>程序将动态修改配置文件，主从自动切换</p>
-<h3 id="redis使用"><a href="#redis使用" class="headerlink" title="redis使用"></a>redis使用</h3><p>可用redis进行计数操作</p>
+<h3 id="集群模式"><a href="#集群模式" class="headerlink" title="集群模式"></a>集群模式</h3><p>集群模式基于主从复制模式</p>
+<p>采用三主三从模式，从节点将作为主节点的备份，主节点宕机后由从节点顶替<br>从节点具有对应主节点的全部数据  </p>
+<p>redis数据通过哈希算法进行分槽将数据平均存储到节点上。</p>
+<h3 id="redis集群vip漂移"><a href="#redis集群vip漂移" class="headerlink" title="redis集群vip漂移"></a>redis集群vip漂移</h3><p>使用vip漂移，可以理解为配置统一访问ip，当集群中有节点失效，则会自动切换至其他节点，– 哨兵模式</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ck9yavmh5000vuo206191k624" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="cka5hqqvi000k2020jyjyhbbi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/noSql-redis/">noSql,redis</a></li></ul>
