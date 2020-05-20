@@ -5,19 +5,20 @@
   
 
   
-  <title>Archives: 2018/9 | zerotop</title>
+  <title>@Transactional | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my github page">
-<meta name="keywords" content="zerotop">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zerotop">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/index.html">
+  <meta name="description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 问题在同一个类的方法中调用带有事务的方法，事务失效 由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也">
+<meta name="keywords" content="事务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="@Transactional">
+<meta property="og:url" content="http://yoursite.com/2018/12/06/Transactional/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="my github page">
+<meta property="og:description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 问题在同一个类的方法中调用带有事务的方法，事务失效 由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-20T14:51:47.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zerotop">
-<meta name="twitter:description" content="my github page">
+<meta name="twitter:title" content="@Transactional">
+<meta name="twitter:description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 问题在同一个类的方法中调用带有事务的方法，事务失效 由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -64,78 +65,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/30/Regular-expression/" class="archive-article-date">
-  <time datetime="2018-09-30T13:40:23.000Z" itemprop="datePublished">Sep 30</time>
+        <section id="main"><article id="post-Transactional" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/12/06/Transactional/" class="article-date">
+  <time datetime="2018-12-06T14:34:18.000Z" itemprop="datePublished">2018-12-06</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/30/Regular-expression/">Regular expression</a>
+    <h1 class="article-title" itemprop="name">
+      @Transactional
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/25/POI/" class="archive-article-date">
-  <time datetime="2018-09-25T12:51:07.000Z" itemprop="datePublished">Sep 25</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/POI/">POI</a>
-    </h1>
-  
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>本篇主要简单介绍一下事务</p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是一个独立的工作单元 要么全部成功要么全部失败<br>事务在我们处理并发场景用的很多  </p>
+<p>我们可以使用事务的四种隔离级别处理相对应的业务</p>
+<p>以及使用不同的策略</p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在同一个类的方法中调用带有事务的方法，事务失效</p>
+<p>由于spring使用代理方式<br>当调用一个方法时，它会先检查时候有事务，有则开启事务，<br>当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也就没有检查该方法是否含有事务这个过程，<br>那么本地方法调用的事务也就无效了。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/13/websocket/" class="archive-article-date">
-  <time datetime="2018-09-13T14:39:23.000Z" itemprop="datePublished">Sep 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/13/websocket/">websocket</a>
-    </h1>
-  
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/12/06/Transactional/" data-id="ckafgwtjt0006ds20euc5tz8r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事务/">事务</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/19/clazz/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          clazz
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/11/27/数据库/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据库</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
