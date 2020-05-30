@@ -5,19 +5,20 @@
   
 
   
-  <title>Tag: git | zerotop</title>
+  <title>SFTP | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my github page">
-<meta name="keywords" content="zerotop">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zerotop">
-<meta property="og:url" content="http://yoursite.com/tags/git/index.html">
+  <meta name="description" content="简介sftp：Secure File Transfer Protocolsftp是ssh中的一部分，是一种比ftp更具安全性的文档传输方式由于使用了加密/解密技术，导致传输效率相对ftp低的多   在linux上不需要额外安装，直接的搭建即可 linux上搭建首先要创建用户组：groupadd sftp 创建用户并设置密码：12345 useradd -g sftp -s /bin/nologin">
+<meta name="keywords" content="ftp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SFTP">
+<meta property="og:url" content="http://yoursite.com/2020/05/30/SFTP/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="my github page">
+<meta property="og:description" content="简介sftp：Secure File Transfer Protocolsftp是ssh中的一部分，是一种比ftp更具安全性的文档传输方式由于使用了加密/解密技术，导致传输效率相对ftp低的多   在linux上不需要额外安装，直接的搭建即可 linux上搭建首先要创建用户组：groupadd sftp 创建用户并设置密码：12345 useradd -g sftp -s /bin/nologin">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-05-30T02:13:20.500Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zerotop">
-<meta name="twitter:description" content="my github page">
+<meta name="twitter:title" content="SFTP">
+<meta name="twitter:description" content="简介sftp：Secure File Transfer Protocolsftp是ssh中的一部分，是一种比ftp更具安全性的文档传输方式由于使用了加密/解密技术，导致传输效率相对ftp低的多   在linux上不需要额外安装，直接的搭建即可 linux上搭建首先要创建用户组：groupadd sftp 创建用户并设置密码：12345 useradd -g sftp -s /bin/nologin">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -64,40 +65,68 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/11/15/git-server/" class="archive-article-date">
-  <time datetime="2018-11-15T14:14:06.000Z" itemprop="datePublished">Nov 15</time>
+        <section id="main"><article id="post-SFTP" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/30/SFTP/" class="article-date">
+  <time datetime="2020-05-30T01:52:03.000Z" itemprop="datePublished">2020-05-30</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/11/15/git-server/">git server</a>
+    <h1 class="article-title" itemprop="name">
+      SFTP
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>sftp：Secure File Transfer Protocol<br>sftp是ssh中的一部分，是一种比ftp更具安全性的文档传输方式<br>由于使用了加密/解密技术，导致传输效率相对ftp低的多  </p>
+<p>在linux上不需要额外安装，直接的搭建即可</p>
+<h2 id="linux上搭建"><a href="#linux上搭建" class="headerlink" title="linux上搭建"></a>linux上搭建</h2><p>首先要创建用户组：<br><code>groupadd sftp</code></p>
+<p>创建用户并设置密码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> useradd -g sftp -s /bin/nologin sftp_admin  </span><br><span class="line"> passwd sftp_admin</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">新建sftp目录： (*** 重点sftp目录从根目录到指定目录都需要root 755权限， 即/ftp 以及 /ftp/sftp 权限一致并属于root)</span><br></pre></td></tr></table></figure></p>
+<p>mkdir -p /ftp/sftp<br>chown -R root:root /ftp/sftp<br>chmod 755 /home/sftp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">之后编辑 /etc/ssh/sshd_config 文件</span><br><span class="line">在最后加上</span><br></pre></td></tr></table></figure></p>
+<p>Subsystem       sftp    internal-sftp    </p>
+<p>Match Group sftp    </p>
+<p>ChrootDirectory /ftp/sftp  </p>
+<p>ForceCommand    internal-sftp    </p>
+<p>AllowTcpForwarding no    </p>
+<p>X11Forwarding no<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">编辑/ete/selinux/config:</span><br></pre></td></tr></table></figure></p>
+<p>setenforce 0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">重启sshd：</span><br></pre></td></tr></table></figure></p>
+<p>service sshd restart<br><code>`</code></p>
+<p>搭建即完成</p>
+<h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>设置/ftp/sftp目录时，一定要注意权限<br>设置之后可以在/ftp/sftp目录下创建文件夹，并上传文件了</p>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckat03zpv0001bo20zqsu4vfi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/">ftp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/05/08/docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">docker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
 
 </section>
         
