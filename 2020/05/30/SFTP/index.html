@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="zerotop">
 <meta property="og:description" content="简介sftp：Secure File Transfer Protocolsftp是ssh中的一部分，是一种比ftp更具安全性的文档传输方式由于使用了加密/解密技术，导致传输效率相对ftp低的多   在linux上不需要额外安装，直接的搭建即可 linux上搭建首先要创建用户组：groupadd sftp 创建用户并设置密码：12345 useradd -g sftp -s /bin/nologin">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-30T02:13:20.500Z">
+<meta property="og:updated_time" content="2020-06-16T15:35:26.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SFTP">
 <meta name="twitter:description" content="简介sftp：Secure File Transfer Protocolsftp是ssh中的一部分，是一种比ftp更具安全性的文档传输方式由于使用了加密/解密技术，导致传输效率相对ftp低的多   在linux上不需要额外安装，直接的搭建即可 linux上搭建首先要创建用户组：groupadd sftp 创建用户并设置密码：12345 useradd -g sftp -s /bin/nologin">
@@ -92,21 +92,19 @@
 <h2 id="linux上搭建"><a href="#linux上搭建" class="headerlink" title="linux上搭建"></a>linux上搭建</h2><p>首先要创建用户组：<br><code>groupadd sftp</code></p>
 <p>创建用户并设置密码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> useradd -g sftp -s /bin/nologin sftp_admin  </span><br><span class="line"> passwd sftp_admin</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">新建sftp目录： (*** 重点sftp目录从根目录到指定目录都需要root 755权限， 即/ftp 以及 /ftp/sftp 权限一致并属于root)</span><br></pre></td></tr></table></figure></p>
 <p>mkdir -p /ftp/sftp<br>chown -R root:root /ftp/sftp<br>chmod 755 /home/sftp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">之后编辑 /etc/ssh/sshd_config 文件</span><br><span class="line">在最后加上</span><br></pre></td></tr></table></figure></p>
-<p>Subsystem       sftp    internal-sftp    </p>
-<p>Match Group sftp    </p>
-<p>ChrootDirectory /ftp/sftp  </p>
-<p>ForceCommand    internal-sftp    </p>
-<p>AllowTcpForwarding no    </p>
-<p>X11Forwarding no<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">编辑/ete/selinux/config:</span><br></pre></td></tr></table></figure></p>
+<p>$ Subsystem       sftp    internal-sftp    </p>
+<p>$ Match Group sftp<br>$ ChrootDirectory /ftp/sftp<br>$ ForceCommand    internal-sftp<br>$ AllowTcpForwarding no<br>$ X11Forwarding no<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">编辑/ete/selinux/config:</span><br></pre></td></tr></table></figure></p>
 <p>setenforce 0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">重启sshd：</span><br></pre></td></tr></table></figure></p>
 <p>service sshd restart<br><code>`</code></p>
 <p>搭建即完成</p>
+<h3 id="多用户"><a href="#多用户" class="headerlink" title="多用户"></a>多用户</h3><p>在可以用同样方式指定多用户，每个用户的权限都不相同<br>sshd_config 中Match Group也可以使用Match User username</p>
 <h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>设置/ftp/sftp目录时，一定要注意权限<br>设置之后可以在/ftp/sftp目录下创建文件夹，并上传文件了</p>
+<h3 id="搭建ftp"><a href="#搭建ftp" class="headerlink" title="搭建ftp"></a>搭建ftp</h3><p>一般使用vsftpd，同样需要新建用户组和指定文件目录，及相应权限</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckat03zpv0001bo20zqsu4vfi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckbi399ym00049c20do9rc8mq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/">ftp</a></li></ul>
@@ -187,7 +185,7 @@
           </li>
         
           <li>
-            <a href="/2020/04/20/云部署/">容器化部署</a>
+            <a href="/2020/04/20/容器化部署/">容器化部署</a>
           </li>
         
       </ul>

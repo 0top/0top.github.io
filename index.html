@@ -93,21 +93,19 @@
 <h2 id="linux上搭建"><a href="#linux上搭建" class="headerlink" title="linux上搭建"></a>linux上搭建</h2><p>首先要创建用户组：<br><code>groupadd sftp</code></p>
 <p>创建用户并设置密码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> useradd -g sftp -s /bin/nologin sftp_admin  </span><br><span class="line"> passwd sftp_admin</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">新建sftp目录： (*** 重点sftp目录从根目录到指定目录都需要root 755权限， 即/ftp 以及 /ftp/sftp 权限一致并属于root)</span><br></pre></td></tr></table></figure></p>
 <p>mkdir -p /ftp/sftp<br>chown -R root:root /ftp/sftp<br>chmod 755 /home/sftp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">之后编辑 /etc/ssh/sshd_config 文件</span><br><span class="line">在最后加上</span><br></pre></td></tr></table></figure></p>
-<p>Subsystem       sftp    internal-sftp    </p>
-<p>Match Group sftp    </p>
-<p>ChrootDirectory /ftp/sftp  </p>
-<p>ForceCommand    internal-sftp    </p>
-<p>AllowTcpForwarding no    </p>
-<p>X11Forwarding no<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">编辑/ete/selinux/config:</span><br></pre></td></tr></table></figure></p>
+<p>$ Subsystem       sftp    internal-sftp    </p>
+<p>$ Match Group sftp<br>$ ChrootDirectory /ftp/sftp<br>$ ForceCommand    internal-sftp<br>$ AllowTcpForwarding no<br>$ X11Forwarding no<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">编辑/ete/selinux/config:</span><br></pre></td></tr></table></figure></p>
 <p>setenforce 0<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">重启sshd：</span><br></pre></td></tr></table></figure></p>
 <p>service sshd restart<br><code>`</code></p>
 <p>搭建即完成</p>
+<h3 id="多用户"><a href="#多用户" class="headerlink" title="多用户"></a>多用户</h3><p>在可以用同样方式指定多用户，每个用户的权限都不相同<br>sshd_config 中Match Group也可以使用Match User username</p>
 <h3 id="坑"><a href="#坑" class="headerlink" title="坑"></a>坑</h3><p>设置/ftp/sftp目录时，一定要注意权限<br>设置之后可以在/ftp/sftp目录下创建文件夹，并上传文件了</p>
+<h3 id="搭建ftp"><a href="#搭建ftp" class="headerlink" title="搭建ftp"></a>搭建ftp</h3><p>一般使用vsftpd，同样需要新建用户组和指定文件目录，及相应权限</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckat03zpv0001bo20zqsu4vfi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckbi399ym00049c20do9rc8mq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/">ftp</a></li></ul>
@@ -149,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/08/docker/" data-id="ckat03zqb0008bo20d3lanx6l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/08/docker/" data-id="ckbi399yx00089c20zlhc0bwf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -201,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ckat03zrp0018bo20mbt62pqy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ckbi39a0000159c20w5wnl1xe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库-NoSql-redis/">数据库,NoSql,redis</a></li></ul>
@@ -250,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ckat03zrb000qbo2074x4wb6e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ckbi399zw00119c20qsccpk43" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -262,9 +260,9 @@
 
 
   
-    <article id="post-云部署" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-容器化部署" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/04/20/云部署/" class="article-date">
+    <a href="/2020/04/20/容器化部署/" class="article-date">
   <time datetime="2020-04-20T14:04:51.000Z" itemprop="datePublished">2020-04-20</time>
 </a>
     
@@ -276,7 +274,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/20/云部署/">容器化部署</a>
+      <a class="article-title" href="/2020/04/20/容器化部署/">容器化部署</a>
     </h1>
   
 
@@ -287,11 +285,14 @@
         <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>使用k8s集群模式进行项目部署与管理。</p>
 <p>使用gitlab/jenkins整合进行CI/CD</p>
 <p>通过helm整理不同环境configMap配置环境参数</p>
+<h3 id="pod"><a href="#pod" class="headerlink" title="pod"></a>pod</h3><p>pod是k8s中使用的最小单位， 一个pod中可以存在多个服务，服务之间可以进行通信</p>
+<h3 id="deployment"><a href="#deployment" class="headerlink" title="deployment"></a>deployment</h3><p>部署</p>
+<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><p>进行代理</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/20/云部署/" data-id="ckat03zrk0011bo20zhly0rxi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/20/容器化部署/" data-id="ckbi399zu000y9c20mx7o05wx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/k8s/">k8s</a></li></ul>
@@ -334,7 +335,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ckat03zr9000pbo208dv3zxde" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ckbi399yv00079c20zgt0cl19" class="article-share-link">Share</a>
       
       
     </footer>
@@ -382,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ckat03zrs001cbo20kwx18tj8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ckbi399zl000o9c20n9rd62zi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -432,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/22/Mysql数据库用户设置/" data-id="ckat03zpk0000bo20ozqlduuk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/22/Mysql数据库用户设置/" data-id="ckbi399xf00009c203uztoc5m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -475,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ckat03zq70004bo204g374gzp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ckbi399yq00069c201ekoj0py" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,7 +518,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ckat03zq90005bo20e3wqlmak" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ckbi399z3000e9c20503nmsxb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -593,7 +594,7 @@
           </li>
         
           <li>
-            <a href="/2020/04/20/云部署/">容器化部署</a>
+            <a href="/2020/04/20/容器化部署/">容器化部署</a>
           </li>
         
       </ul>
