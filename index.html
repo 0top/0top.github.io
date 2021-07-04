@@ -66,6 +66,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql/mysql" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/04/mysql/mysql/" class="article-date">
+  <time datetime="2021-07-04T09:47:46.000Z" itemprop="datePublished">2021-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/04/mysql/mysql/">disruptor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>MySQL mvcc多版本控制</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/07/04/mysql/mysql/" data-id="ckqp2xbnm001jcc204k0icmkq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-disruptor/disruptor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/04/disruptor/disruptor/" class="article-date">
+  <time datetime="2021-07-04T09:47:46.000Z" itemprop="datePublished">2021-07-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/04/disruptor/disruptor/">disruptor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>disruptor是并发编程框架</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>1.环形数组结构<br>为了避免垃圾回收，使用数组而非链表<br>2.元素位置定位<br>数组长度2^n，位运算，加快运算速度，<br>3，无锁设计<br>申请数组位置，申请到后，可以直接写入或者读取</p>
+<h3 id="伪共享"><a href="#伪共享" class="headerlink" title="伪共享"></a>伪共享</h3><p>解决伪共享问题：<br>使用L1,L2,L3缓存时，缓存时由很多cache line组成的，每个cache line是64字节。在缓存中的数据，若由于对象中某个字段值修改则可能导致缓存失效，这种无法充分使用缓存行特性的现象，称为伪共享。<br>通过元素中添加额外的7个long类型字段补位，使得变量填满64k空间，从而使得缓存一直有效。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/07/04/disruptor/disruptor/" data-id="ckqp2xbnb001gcc2037nxpr1q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-SFTP" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/05/30/SFTP/" class="article-date">
@@ -105,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckbi399ym00049c20do9rc8mq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/30/SFTP/" data-id="ckqp2xblc0004cc20d82wgg9c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ftp/">ftp</a></li></ul>
@@ -147,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/08/docker/" data-id="ckbi399yx00089c20zlhc0bwf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/08/docker/" data-id="ckqp2xblp000acc204rsx9cgi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/">docker</a></li></ul>
@@ -199,7 +277,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ckbi39a0000159c20w5wnl1xe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/05/08/redis/" data-id="ckqp2xbn9001fcc20q5f8b1dv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库-NoSql-redis/">数据库,NoSql,redis</a></li></ul>
@@ -248,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ckbi399zw00119c20qsccpk43" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/22/liquibase/" data-id="ckqp2xbmg000occ20a46rwy4l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
@@ -292,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/04/20/容器化部署/" data-id="ckbi399zu000y9c20mx7o05wx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/20/容器化部署/" data-id="ckqp2xbmt0013cc20tm9v7nih" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/k8s/">k8s</a></li></ul>
@@ -335,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ckbi399yv00079c20zgt0cl19" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/CQEngine/" data-id="ckqp2xbkr0000cc20tg0nyqw0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -383,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ckbi399zl000o9c20n9rd62zi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ckqp2xbmo000ycc20dt3v3rew" class="article-share-link">Share</a>
       
       
     </footer>
@@ -433,94 +511,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/22/Mysql数据库用户设置/" data-id="ckbi399xf00009c203uztoc5m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/22/Mysql数据库用户设置/" data-id="ckqp2xbl40001cc20f5mtecnz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-atomic" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/01/08/atomic/" class="article-date">
-  <time datetime="2019-01-08T15:30:13.000Z" itemprop="datePublished">2019-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/08/atomic/">atomic</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>为解决高并发情况下线程安全问题，synchronized使用悲观锁效率低。<br>原子操作 线程安全</p>
-<h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3><p>乐观锁策略<br>compare and swap</p>
-<p>简单讲就是如果想要替换的数据不是现在的数据吗，则拒绝替换<br>即原始值为A，想将A替换为B时，原始值已经变成了C，这意味着已经有程序改动了原始值，则不进行值替换</p>
-<p>disruptor使用CAS算法不是用锁解决并发问题<br>需要的朋友可以去查看一下</p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><p>AtomicBoolean<br>AtomicInteger<br>AtomicLong</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ckbi399yq00069c201ekoj0py" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-clazz" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/12/19/clazz/" class="article-date">
-  <time datetime="2018-12-19T14:17:50.000Z" itemprop="datePublished">2018-12-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/12/19/clazz/">clazz</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h3><p>classLoader</p>
-<p>Bootstrap ClassLoader:<br>最顶层的加载类， 加载核心库， rt.jar、resources.jar、charsets.jar和classdeng<br>Extention ClassLoader:<br>扩展的类加载器     jre/lib/ext目录下的jar包和class文件<br>Appclass Loader：<br>也称为SystemAppClass 加载当前应用的classpath的所有类</p>
-<h3 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h3><p>通过反射获取到类，传入实际的对象进行方法调用以及信息的获取</p>
-<p>Method</p>
-<p>可以通过方法类调用类方法<br>传入的object可以自动识别相应的对象</p>
-<h3 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h3><p>可以使用这种方法编写工具类，通过泛型的方式获取对象中方法和属性<br>工具类和我们使用的很多方法类似<br>可以通过getMethod()底层调用相对应类的方法</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ckbi399z3000e9c20503nmsxb" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -556,7 +551,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -565,7 +560,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
     </div>
   </div>
 
@@ -578,6 +573,14 @@
       <ul>
         
           <li>
+            <a href="/2021/07/04/mysql/mysql/">disruptor</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/04/disruptor/disruptor/">disruptor</a>
+          </li>
+        
+          <li>
             <a href="/2020/05/30/SFTP/">SFTP</a>
           </li>
         
@@ -587,14 +590,6 @@
         
           <li>
             <a href="/2020/05/08/redis/">redis</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/22/liquibase/">liquibase</a>
-          </li>
-        
-          <li>
-            <a href="/2020/04/20/容器化部署/">容器化部署</a>
           </li>
         
       </ul>
@@ -609,7 +604,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 zerotop<br>
+      &copy; 2021 zerotop<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

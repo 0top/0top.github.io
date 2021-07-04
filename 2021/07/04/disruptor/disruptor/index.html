@@ -5,19 +5,20 @@
   
 
   
-  <title>Tag: Excel | zerotop</title>
+  <title>disruptor | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="my github page">
+  <meta name="description" content="简介disruptor是并发编程框架 优点1.环形数组结构为了避免垃圾回收，使用数组而非链表2.元素位置定位数组长度2^n，位运算，加快运算速度，3，无锁设计申请数组位置，申请到后，可以直接写入或者读取 伪共享解决伪共享问题：使用L1,L2,L3缓存时，缓存时由很多cache line组成的，每个cache line是64字节。在缓存中的数据，若由于对象中某个字段值修改则可能导致缓存失效，这种无法">
 <meta name="keywords" content="zerotop">
-<meta property="og:type" content="website">
-<meta property="og:title" content="zerotop">
-<meta property="og:url" content="http://yoursite.com/tags/Excel/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="disruptor">
+<meta property="og:url" content="http://yoursite.com/2021/07/04/disruptor/disruptor/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="my github page">
+<meta property="og:description" content="简介disruptor是并发编程框架 优点1.环形数组结构为了避免垃圾回收，使用数组而非链表2.元素位置定位数组长度2^n，位运算，加快运算速度，3，无锁设计申请数组位置，申请到后，可以直接写入或者读取 伪共享解决伪共享问题：使用L1,L2,L3缓存时，缓存时由很多cache line组成的，每个cache line是64字节。在缓存中的数据，若由于对象中某个字段值修改则可能导致缓存失效，这种无法">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2021-07-04T10:53:11.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zerotop">
-<meta name="twitter:description" content="my github page">
+<meta name="twitter:title" content="disruptor">
+<meta name="twitter:description" content="简介disruptor是并发编程框架 优点1.环形数组结构为了避免垃圾回收，使用数组而非链表2.元素位置定位数组长度2^n，位运算，加快运算速度，3，无锁设计申请数组位置，申请到后，可以直接写入或者读取 伪共享解决伪共享问题：使用L1,L2,L3缓存时，缓存时由很多cache line组成的，每个cache line是64字节。在缓存中的数据，若由于对象中某个字段值修改则可能导致缓存失效，这种无法">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -64,59 +65,63 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/10/10/poi读取值/" class="archive-article-date">
-  <time datetime="2018-10-10T15:39:03.000Z" itemprop="datePublished">Oct 10</time>
+        <section id="main"><article id="post-disruptor/disruptor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/07/04/disruptor/disruptor/" class="article-date">
+  <time datetime="2021-07-04T09:47:46.000Z" itemprop="datePublished">2021-07-04</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/10/10/poi读取值/">poi读取值</a>
+    <h1 class="article-title" itemprop="name">
+      disruptor
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2018/09/25/POI/" class="archive-article-date">
-  <time datetime="2018-09-25T12:51:07.000Z" itemprop="datePublished">Sep 25</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/25/POI/">POI</a>
-    </h1>
-  
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>disruptor是并发编程框架</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>1.环形数组结构<br>为了避免垃圾回收，使用数组而非链表<br>2.元素位置定位<br>数组长度2^n，位运算，加快运算速度，<br>3，无锁设计<br>申请数组位置，申请到后，可以直接写入或者读取</p>
+<h3 id="伪共享"><a href="#伪共享" class="headerlink" title="伪共享"></a>伪共享</h3><p>解决伪共享问题：<br>使用L1,L2,L3缓存时，缓存时由很多cache line组成的，每个cache line是64字节。在缓存中的数据，若由于对象中某个字段值修改则可能导致缓存失效，这种无法充分使用缓存行特性的现象，称为伪共享。<br>通过元素中添加额外的7个long类型字段补位，使得变量填满64k空间，从而使得缓存一直有效。</p>
 
-    </header>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2021/07/04/disruptor/disruptor/" data-id="ckqp2xbnb001gcc2037nxpr1q" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/07/04/mysql/mysql/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          disruptor
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/05/30/SFTP/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SFTP</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
