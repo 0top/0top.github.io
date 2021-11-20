@@ -5,20 +5,20 @@
   
 
   
-  <title>pyqt5 | zerotop</title>
+  <title>disruptor | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介最新需要写一个桌面可以运行程序，暂时选定用pyqt5进行开发以下是开发路上一点心得 技术栈pyqt5 + qt designer打包使用pyinstaller 安装123https://riverbankcomputing.com/software/pyqt/download5/pip3 install PyQt5 在安装pyqt时Pyqt5安装超时，需要换安装源http://pypi.dou">
-<meta name="keywords" content="zerotop">
+  <meta name="description" content="简介MySQL mvcc多版本控制 优点备注">
+<meta name="keywords" content="database">
 <meta property="og:type" content="article">
-<meta property="og:title" content="pyqt5">
-<meta property="og:url" content="http://yoursite.com/2019/02/11/pyqt5/index.html">
+<meta property="og:title" content="disruptor">
+<meta property="og:url" content="http://yoursite.com/2021/07/04/database/mvcc/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介最新需要写一个桌面可以运行程序，暂时选定用pyqt5进行开发以下是开发路上一点心得 技术栈pyqt5 + qt designer打包使用pyinstaller 安装123https://riverbankcomputing.com/software/pyqt/download5/pip3 install PyQt5 在安装pyqt时Pyqt5安装超时，需要换安装源http://pypi.dou">
+<meta property="og:description" content="简介MySQL mvcc多版本控制 优点备注">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-09T16:43:39.555Z">
+<meta property="og:updated_time" content="2021-11-20T07:55:04.643Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="pyqt5">
-<meta name="twitter:description" content="简介最新需要写一个桌面可以运行程序，暂时选定用pyqt5进行开发以下是开发路上一点心得 技术栈pyqt5 + qt designer打包使用pyinstaller 安装123https://riverbankcomputing.com/software/pyqt/download5/pip3 install PyQt5 在安装pyqt时Pyqt5安装超时，需要换安装源http://pypi.dou">
+<meta name="twitter:title" content="disruptor">
+<meta name="twitter:description" content="简介MySQL mvcc多版本控制 优点备注">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-pyqt5" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-database/mvcc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/02/11/pyqt5/" class="article-date">
-  <time datetime="2019-02-11T14:41:41.000Z" itemprop="datePublished">2019-02-11</time>
+    <a href="/2021/07/04/database/mvcc/" class="article-date">
+  <time datetime="2021-07-04T09:47:46.000Z" itemprop="datePublished">2021-07-04</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      pyqt5
+      disruptor
     </h1>
   
 
@@ -87,44 +87,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>最新需要写一个桌面可以运行程序，暂时选定用pyqt5进行开发<br>以下是开发路上一点心得</p>
-<h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><p>pyqt5 + qt designer<br>打包使用pyinstaller</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://riverbankcomputing.com/software/pyqt/download5/</span><br><span class="line"></span><br><span class="line">pip3 install PyQt5</span><br></pre></td></tr></table></figure>
-<p>在安装pyqt时<br>Pyqt5安装超时，需要换安装源<a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a> </p>
-<p>windows文件夹下搜:%APPDATA%<br>AppData/Roaming文件夹下创建文件夹pip<br>pip文件夹下创建pip.ini  写入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">timeout = 6000</span><br><span class="line">index-url = http://pypi.douban.com/simple</span><br><span class="line">trusted-host = pypi.douban.com</span><br></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5 -i https://pypi.douban.com/simple</span><br></pre></td></tr></table></figure></p>
-<p>安装pyqt5-toos<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5-tools</span><br></pre></td></tr></table></figure></p>
-<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Pip3 install pyinstaller</span><br></pre></td></tr></table></figure>
-<p>通过pyinstaller打包成exe</p>
-<h4 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h4><p>项目中如果有引入下级包，打包的项目必须在最顶级<br>如果引入图片，需要绝对路径</p>
-<p>备注:压缩包不会打包到exe中，所以如果原始文件被删除，exe就找不到了<br>待填坑<br>考虑使用pyrcc</p>
-<h3 id="项目打算添加opengl的东西"><a href="#项目打算添加opengl的东西" class="headerlink" title="项目打算添加opengl的东西"></a>项目打算添加opengl的东西</h3><p>挖坑</p>
-
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>MySQL mvcc多版本控制</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/11/pyqt5/" data-id="ckqp2xbmo000ycc20dt3v3rew" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2021/07/04/database/mvcc/" data-id="ckw7l5rs00012jg200km8bneo" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2019/07/10/CQEngine/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          CQEngine
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/22/Mysql数据库用户设置/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2021/07/04/disruptor/disruptor/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">mysql</div>
+      <div class="article-nav-title">disruptor</div>
     </a>
   
 </nav>
@@ -153,7 +135,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 20px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -175,7 +157,7 @@
       <ul>
         
           <li>
-            <a href="/2021/07/04/mysql/mysql/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">disruptor</a>
           </li>
         
           <li>
@@ -191,7 +173,7 @@
           </li>
         
           <li>
-            <a href="/2020/05/08/redis/">redis</a>
+            <a href="/2020/05/08/database/redis/">redis</a>
           </li>
         
       </ul>

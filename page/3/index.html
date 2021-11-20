@@ -66,6 +66,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-middleware/中间件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/10/05/middleware/中间件/" class="article-date">
+  <time datetime="2018-10-05T14:21:48.000Z" itemprop="datePublished">2018-10-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/05/middleware/中间件/">中间件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>本篇文章主要是讨论一些常用的中间件  </p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>中间件一般是中间服务系统</p>
+<h3 id="消息中间件"><a href="#消息中间件" class="headerlink" title="消息中间件"></a>消息中间件</h3><ul>
+<li>rabbitmq<br>  首先会使用rabbitmq,rabbitmq支持stomp协议<br>  安装rabbitmq需要安装Erlang(需要翻墙)</li>
+</ul>
+<p>rabbitmq有交换机的概念，我们可以绑定交换机，然后在交换机上创建队列去接收消息</p>
+<h3 id="node中间件"><a href="#node中间件" class="headerlink" title="node中间件"></a>node中间件</h3><p>在解决跨域问题时，使用到了node端中间件<br>var proxy = require(‘http-proxy-middleware’);<br>可以直接将请求代理到后端，后端无需设置跨域  </p>
+<h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><p>tomcat等容器也算是中间件</p>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/10/05/middleware/中间件/" data-id="ckw7l5rt40018jg20gdog7wbw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Regular-expression" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/30/Regular-expression/" class="article-date">
@@ -106,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ckqp2xbmb000kcc20b5mokehs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ckw7l5rrj000mjg20oxgfsi4j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
@@ -118,9 +164,9 @@
 
 
   
-    <article id="post-POI" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-excel/POI" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/09/25/POI/" class="article-date">
+    <a href="/2018/09/25/excel/POI/" class="article-date">
   <time datetime="2018-09-25T12:51:07.000Z" itemprop="datePublished">2018-09-25</time>
 </a>
     
@@ -132,7 +178,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/25/POI/">POI</a>
+      <a class="article-title" href="/2018/09/25/excel/POI/">POI</a>
     </h1>
   
 
@@ -149,13 +195,13 @@
 <p>对于公式类型的，即单元格中的值通过其他单元格组合计算出来的<br>需要取出计算后的值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FormulaEvaluator evaluator = null;</span><br><span class="line">if (cell instanceof HSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new HSSFFormulaEvaluator((HSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">if (cell instanceof XSSFFormulaEvaluator) &#123;</span><br><span class="line">  evaluator = new XSSFFormulaEvaluator((XSSFFormulaEvaluator)sheet.getWorkbook());</span><br><span class="line">&#125;</span><br><span class="line">val = evaluator.evaluateFormulaCell(cell);</span><br></pre></td></tr></table></figure></p>
         
           <p class="article-more-link">
-            <a href="/2018/09/25/POI/#more">Read More</a>
+            <a href="/2018/09/25/excel/POI/#more">Read More</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/POI/" data-id="ckqp2xbl70002cc20ge7iovfj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/excel/POI/" data-id="ckw7l5rt70019jg204g3lh0kh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li></ul>
@@ -206,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="ckqp2xbmn000wcc20g78wygum" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="ckw7l5rrg000ijg201vzxbdup" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="ckqp2xbnn001kcc20imxcwgos" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="ckw7l5rro000qjg20pyolkevv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +346,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="ckqp2xbmk000tcc20shza3a6c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="ckw7l5rr10006jg20x6yc48fv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="ckqp2xbno001mcc20nosec230" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="ckw7l5rrl000njg20e7prheer" class="article-share-link">Share</a>
       
       
     </footer>
@@ -392,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="ckqp2xbm6000icc20h4tupbdf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="ckw7l5rqz0005jg20lz01vgjl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -437,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="ckqp2xbmd000mcc20n701bumg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="ckw7l5rr40009jg20wuusadlp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -475,7 +521,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 20px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -497,7 +543,7 @@
       <ul>
         
           <li>
-            <a href="/2021/07/04/mysql/mysql/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">disruptor</a>
           </li>
         
           <li>
@@ -513,7 +559,7 @@
           </li>
         
           <li>
-            <a href="/2020/05/08/redis/">redis</a>
+            <a href="/2020/05/08/database/redis/">redis</a>
           </li>
         
       </ul>

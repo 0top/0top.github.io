@@ -5,20 +5,20 @@
   
 
   
-  <title>中间件 | zerotop</title>
+  <title>CQEngine | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="中间件本篇文章主要是讨论一些常用的中间件   简介中间件一般是中间服务系统 消息中间件 rabbitmq首先会使用rabbitmq,rabbitmq支持stomp协议安装rabbitmq需要安装Erlang(需要翻墙) rabbitmq有交换机的概念，我们可以绑定交换机，然后在交换机上创建队列去接收消息 node中间件在解决跨域问题时，使用到了node端中间件var proxy = require">
-<meta name="keywords" content="中间件">
+  <meta name="description" content="简介CQEngine是一款开源的集合查询引擎，有了CQEngine，我们可以使用SQL-LIKE的方式进行java集合的查询。 CQEngine可以进行毫秒级查询。相应速度微妙级。 CQEngine中有index的概念，可以给不同的属性字段添加index，在查询时可以大大加快速度。 支持嵌套查询。 备注CQEngine只针对查询做优化，查询后的结果可以转为stream操作获取到数据。针对大量数据，">
+<meta name="keywords" content="zerotop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="中间件">
-<meta property="og:url" content="http://yoursite.com/2018/10/05/中间件/index.html">
+<meta property="og:title" content="CQEngine">
+<meta property="og:url" content="http://yoursite.com/2019/07/10/middleware/CQEngine/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="中间件本篇文章主要是讨论一些常用的中间件   简介中间件一般是中间服务系统 消息中间件 rabbitmq首先会使用rabbitmq,rabbitmq支持stomp协议安装rabbitmq需要安装Erlang(需要翻墙) rabbitmq有交换机的概念，我们可以绑定交换机，然后在交换机上创建队列去接收消息 node中间件在解决跨域问题时，使用到了node端中间件var proxy = require">
+<meta property="og:description" content="简介CQEngine是一款开源的集合查询引擎，有了CQEngine，我们可以使用SQL-LIKE的方式进行java集合的查询。 CQEngine可以进行毫秒级查询。相应速度微妙级。 CQEngine中有index的概念，可以给不同的属性字段添加index，在查询时可以大大加快速度。 支持嵌套查询。 备注CQEngine只针对查询做优化，查询后的结果可以转为stream操作获取到数据。针对大量数据，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-10T12:44:15.611Z">
+<meta property="og:updated_time" content="2021-11-20T08:56:20.231Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="中间件">
-<meta name="twitter:description" content="中间件本篇文章主要是讨论一些常用的中间件   简介中间件一般是中间服务系统 消息中间件 rabbitmq首先会使用rabbitmq,rabbitmq支持stomp协议安装rabbitmq需要安装Erlang(需要翻墙) rabbitmq有交换机的概念，我们可以绑定交换机，然后在交换机上创建队列去接收消息 node中间件在解决跨域问题时，使用到了node端中间件var proxy = require">
+<meta name="twitter:title" content="CQEngine">
+<meta name="twitter:description" content="简介CQEngine是一款开源的集合查询引擎，有了CQEngine，我们可以使用SQL-LIKE的方式进行java集合的查询。 CQEngine可以进行毫秒级查询。相应速度微妙级。 CQEngine中有index的概念，可以给不同的属性字段添加index，在查询时可以大大加快速度。 支持嵌套查询。 备注CQEngine只针对查询做优化，查询后的结果可以转为stream操作获取到数据。针对大量数据，">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-中间件" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-middleware/CQEngine" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/10/05/中间件/" class="article-date">
-  <time datetime="2018-10-05T14:21:48.000Z" itemprop="datePublished">2018-10-05</time>
+    <a href="/2019/07/10/middleware/CQEngine/" class="article-date">
+  <time datetime="2019-07-10T12:47:46.000Z" itemprop="datePublished">2019-07-10</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      中间件
+      CQEngine
     </h1>
   
 
@@ -87,40 +87,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>本篇文章主要是讨论一些常用的中间件  </p>
-<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>中间件一般是中间服务系统</p>
-<h3 id="消息中间件-rabbitmq"><a href="#消息中间件-rabbitmq" class="headerlink" title="消息中间件 rabbitmq"></a>消息中间件 rabbitmq</h3><p>首先会使用rabbitmq,rabbitmq支持stomp协议<br>安装rabbitmq需要安装Erlang(需要翻墙)</p>
-<p>rabbitmq有交换机的概念，我们可以绑定交换机，然后在交换机上创建队列去接收消息</p>
-<h3 id="node中间件"><a href="#node中间件" class="headerlink" title="node中间件"></a>node中间件</h3><p>在解决跨域问题时，使用到了node端中间件<br>var proxy = require(‘http-proxy-middleware’);<br>可以直接将请求代理到后端，后端无需设置跨域  </p>
-<h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><p>tomcat等容器也算是中间件</p>
-<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>CQEngine是一款开源的集合查询引擎，有了CQEngine，我们可以使用SQL-LIKE的方式进行java集合的查询。</p>
+<p>CQEngine可以进行毫秒级查询。相应速度微妙级。</p>
+<p>CQEngine中有index的概念，可以给不同的属性字段添加index，在查询时可以大大加快速度。</p>
+<p>支持嵌套查询。</p>
+<h3 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h3><p>CQEngine只针对查询做优化，查询后的结果可以转为stream操作获取到数据。<br>针对大量数据，stream转集合实际上会比普通stream慢很多。<br>CQEngine主要是针对查询做的优化，在查询时可以进行排序，但是重新排序意味着数据整体结构的改变，添加排序会花相对较多的时间</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/中间件/" data-id="ckqp2xbmq000zcc20lpqb7xo3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/middleware/CQEngine/" data-id="ckw7l5rtc001cjg20hdel9pdn" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
-
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/10/10/poi读取值/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/20/容器化部署/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          poi读取值
+          容器化部署
         
       </div>
     </a>
   
   
-    <a href="/2018/09/30/Regular-expression/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/02/11/py/pyqt5/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Regular expression</div>
+      <div class="article-nav-title">pyqt5</div>
     </a>
   
 </nav>
@@ -149,7 +146,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 10px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/Excel/" style="font-size: 20px;">Excel</a> <a href="/tags/database/" style="font-size: 20px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/ftp/" style="font-size: 10px;">ftp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/k8s/" style="font-size: 10px;">k8s</a> <a href="/tags/other/" style="font-size: 10px;">other</a> <a href="/tags/shiro/" style="font-size: 20px;">shiro</a> <a href="/tags/中间件/" style="font-size: 10px;">中间件</a> <a href="/tags/事务/" style="font-size: 10px;">事务</a> <a href="/tags/数据库/" style="font-size: 20px;">数据库</a> <a href="/tags/数据库-NoSql-redis/" style="font-size: 10px;">数据库,NoSql,redis</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -171,7 +168,7 @@
       <ul>
         
           <li>
-            <a href="/2021/07/04/mysql/mysql/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">disruptor</a>
           </li>
         
           <li>
@@ -187,7 +184,7 @@
           </li>
         
           <li>
-            <a href="/2020/05/08/redis/">redis</a>
+            <a href="/2020/05/08/database/redis/">redis</a>
           </li>
         
       </ul>
