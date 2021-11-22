@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="zerotop">
 <meta property="og:description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 关于正则测试工具: regexbuddy可以查看正则匹配的过程，便于优化   记录https://www.regular-expressions.info/repeat.htm">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-20T14:51:35.441Z">
+<meta property="og:updated_time" content="2021-11-22T14:07:00.431Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Regular expression">
 <meta name="twitter:description" content="简介本篇文章内容主要是在学习正则表达式中记录的一些笔记希望能对你有所帮助   地址有需要的朋友可以去这个地址看正则相关内容https://www.regular-expressions.info/tutorial.html 关于正则测试工具: regexbuddy可以查看正则匹配的过程，便于优化   记录https://www.regular-expressions.info/repeat.htm">
@@ -96,7 +96,7 @@
 <p>对于此类匹配，更优的正则式为：  &lt;[^&gt;]+&gt;<br>[^&gt;]+ 表示匹配多个非&gt;号的符号</p>
 <p>2.对于[]:<br>It is important to remember that a negated character class<br>still must match a character<br>意思是一个中括号需要匹配字符，<br>q[^u]   不会匹配   Iraq 因为q后没有字符<br>但是会匹配Iraq is a country.</p>
 <p>如果想匹配    q后面不是u 以及单纯只有一个q<br>正则式： q(?!u)  </p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><h5 id="Anchor-锚点"><a href="#Anchor-锚点" class="headerlink" title="Anchor 锚点"></a>Anchor 锚点</h5><p>caret ：  ^匹配插入字符第一个字符前面的位置<br>dollar：  $匹配插入字符最后一个字符后面位置<br>以上两个会在不同的语言中匹配不同，因为如果有多行数据，可能会只匹配一行<br>/A    字符串开头<br>/Z     字符串结尾<br>永远只只对于数据的开头和结尾，不受多行字符串影响(部分不支持)  </p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><h4 id="Anchor锚点"><a href="#Anchor锚点" class="headerlink" title="Anchor锚点"></a>Anchor锚点</h4><p>caret ：  ^匹配插入字符第一个字符前面的位置<br>dollar：  $匹配插入字符最后一个字符后面位置<br>以上两个会在不同的语言中匹配不同，因为如果有多行数据，可能会只匹配一行<br>/A    字符串开头<br>/Z     字符串结尾<br>永远只只对于数据的开头和结尾，不受多行字符串影响(部分不支持)  </p>
 <p>negated character classes also match (invisible) line break characters.<br>否定的字符类也匹配（不可见）换行符。<br>[^0-9]      [^0-9\r\n]matches any character that is not a digit or a line break.  </p>
 <p>[x^] matches an x or a caret.  –^不放到[]开头位置即可，不需要转义<br>[]x] matches a closing bracket or an x<br>[^]x] matches any character that is not a closing bracket or an x<br>This does not work in JavaScript,  </p>
 <h3 id="正则表达式匹配特殊字符"><a href="#正则表达式匹配特殊字符" class="headerlink" title="正则表达式匹配特殊字符"></a>正则表达式匹配特殊字符</h3><p>正则中如果需要使用特殊的字符需要使用下列字符进行转义：<br>点的转义：.       ==&gt; \u002E<br>美元符号的转义：$  ==&gt; \u0024<br>乘方符号的转义：^  ==&gt; \u005E<br>左大括号的转义：{  ==&gt; \u007B<br>左方括号的转义：[  ==&gt; \u005B<br>左圆括号的转义：(  ==&gt; \u0028<br>竖线的转义：|      ==&gt; \u007C<br>右圆括号的转义：)  ==&gt; \u0029<br>星号的转义：*      ==&gt; \u002A<br>加号的转义：+     ==&gt; \u002B<br>问号的转义：?     ==&gt; \u003F<br>反斜杠的转义：\   ==&gt; \u005C</p>
@@ -105,7 +105,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ckw7lqybp000ajc20vu4fhtn8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ckwar0rpw0000u820rie7f6az" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
@@ -183,11 +183,11 @@
           </li>
         
           <li>
-            <a href="/2021/07/04/database/mvcc/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">mvcc</a>
           </li>
         
           <li>
-            <a href="/2020/05/30/SFTP/">SFTP</a>
+            <a href="/2020/05/30/linux/SFTP/">SFTP</a>
           </li>
         
           <li>

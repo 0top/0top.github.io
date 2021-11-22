@@ -100,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/05/middleware/中间件/" data-id="ckw7lqyd4001ajc20i8kgr9pa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/05/middleware/中间件/" data-id="ckwar0rsp001au820917l40j2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/中间件/">中间件</a></li></ul>
@@ -143,7 +143,7 @@
 <p>对于此类匹配，更优的正则式为：  &lt;[^&gt;]+&gt;<br>[^&gt;]+ 表示匹配多个非&gt;号的符号</p>
 <p>2.对于[]:<br>It is important to remember that a negated character class<br>still must match a character<br>意思是一个中括号需要匹配字符，<br>q[^u]   不会匹配   Iraq 因为q后没有字符<br>但是会匹配Iraq is a country.</p>
 <p>如果想匹配    q后面不是u 以及单纯只有一个q<br>正则式： q(?!u)  </p>
-<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><h5 id="Anchor-锚点"><a href="#Anchor-锚点" class="headerlink" title="Anchor 锚点"></a>Anchor 锚点</h5><p>caret ：  ^匹配插入字符第一个字符前面的位置<br>dollar：  $匹配插入字符最后一个字符后面位置<br>以上两个会在不同的语言中匹配不同，因为如果有多行数据，可能会只匹配一行<br>/A    字符串开头<br>/Z     字符串结尾<br>永远只只对于数据的开头和结尾，不受多行字符串影响(部分不支持)  </p>
+<h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><h4 id="Anchor锚点"><a href="#Anchor锚点" class="headerlink" title="Anchor锚点"></a>Anchor锚点</h4><p>caret ：  ^匹配插入字符第一个字符前面的位置<br>dollar：  $匹配插入字符最后一个字符后面位置<br>以上两个会在不同的语言中匹配不同，因为如果有多行数据，可能会只匹配一行<br>/A    字符串开头<br>/Z     字符串结尾<br>永远只只对于数据的开头和结尾，不受多行字符串影响(部分不支持)  </p>
 <p>negated character classes also match (invisible) line break characters.<br>否定的字符类也匹配（不可见）换行符。<br>[^0-9]      [^0-9\r\n]matches any character that is not a digit or a line break.  </p>
 <p>[x^] matches an x or a caret.  –^不放到[]开头位置即可，不需要转义<br>[]x] matches a closing bracket or an x<br>[^]x] matches any character that is not a closing bracket or an x<br>This does not work in JavaScript,  </p>
 <h3 id="正则表达式匹配特殊字符"><a href="#正则表达式匹配特殊字符" class="headerlink" title="正则表达式匹配特殊字符"></a>正则表达式匹配特殊字符</h3><p>正则中如果需要使用特殊的字符需要使用下列字符进行转义：<br>点的转义：.       ==&gt; \u002E<br>美元符号的转义：$  ==&gt; \u0024<br>乘方符号的转义：^  ==&gt; \u005E<br>左大括号的转义：{  ==&gt; \u007B<br>左方括号的转义：[  ==&gt; \u005B<br>左圆括号的转义：(  ==&gt; \u0028<br>竖线的转义：|      ==&gt; \u007C<br>右圆括号的转义：)  ==&gt; \u0029<br>星号的转义：*      ==&gt; \u002A<br>加号的转义：+     ==&gt; \u002B<br>问号的转义：?     ==&gt; \u003F<br>反斜杠的转义：\   ==&gt; \u005C</p>
@@ -152,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ckw7lqybp000ajc20vu4fhtn8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/30/Regular-expression/" data-id="ckwar0rpw0000u820rie7f6az" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
@@ -210,7 +210,7 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/25/excel/POI/" data-id="ckw7lqyd10016jc2018gqtxtp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/25/excel/POI/" data-id="ckwar0rs7000xu8200dic3d0l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li></ul>
@@ -256,12 +256,11 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
 <h3 id="后台"><a href="#后台" class="headerlink" title="后台"></a>后台</h3><p>通过stomp，我们可以接收send，subscribe等请求<br>在前端连接后，可以订阅多个频道，<br>后端可以直接对订阅的topic地址发送消息</p>
 <h3 id="文档地址"><a href="#文档地址" class="headerlink" title="文档地址"></a>文档地址</h3><p><a href="http://jmesnil.net/stomp-websocket/doc/" title="sockjs地址" target="_blank" rel="noopener">http://jmesnil.net/stomp-websocket/doc/</a></p>
 <h3 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h3><p>rabbitmq 以后会使用这个消息队列中间件<br>rabbitmq 需要下载Erlang，跟着流程下载就好了  </p>
-<h3 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h3><p>应用方面比较广，可以多多接触一下</p>
-<h3 id="未完待续。。。"><a href="#未完待续。。。" class="headerlink" title="未完待续。。。"></a>未完待续。。。</h3>
+<h3 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="ckw7lqyck000zjc204f57xqba" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/13/websocket/" data-id="ckwar0rra000gu820reimtz6o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -305,7 +304,7 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="ckw7lqybt000bjc2053urt902" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/30/hexo主题favicon/" data-id="ckwar0rr4000du820s4vk7hv4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -355,7 +354,7 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="ckw7lqyci000xjc20ihd9ojhh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/28/google-plugins/" data-id="ckwar0rr1000au820hff5b4ms" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,18 +386,18 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h3><h3 id="java常用IDE："><a href="#java常用IDE：" class="headerlink" title="java常用IDE："></a>java常用IDE：</h3><p>myeclipse和idea：当然eclipse也可以，不过集成度高的ide有时候开发效率更高  </p>
-<h3 id="文档-："><a href="#文档-：" class="headerlink" title="文档 ："></a>文档 ：</h3><p>swagger-ui    直接在项目中添加配置，解耦前后端开发</p>
-<h3 id="google插件："><a href="#google插件：" class="headerlink" title="google插件："></a>google插件：</h3><p>postman/jsonviewer：   可以用来模拟请求，以及在google浏览器中查看json用  </p>
+        <h2 id="常用工具"><a href="#常用工具" class="headerlink" title="常用工具"></a>常用工具</h2><h3 id="java常用IDE"><a href="#java常用IDE" class="headerlink" title="java常用IDE"></a>java常用IDE</h3><p>myeclipse和idea：当然eclipse也可以，不过集成度高的ide有时候开发效率更高  </p>
+<h3 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h3><p>swagger-ui    直接在项目中添加配置，解耦前后端开发</p>
+<h3 id="google插件"><a href="#google插件" class="headerlink" title="google插件"></a>google插件</h3><p>postman/jsonviewer：   可以用来模拟请求，以及在google浏览器中查看json用  </p>
 <p>csdn cleaner: <a href="https://github.com/0top/google-plugins" target="_blank" rel="noopener">去csdn广告插件</a></p>
-<h3 id="数据库："><a href="#数据库：" class="headerlink" title="数据库："></a>数据库：</h3><p>navicat： mysql数据库常用工具</p>
-<h3 id="编辑器："><a href="#编辑器：" class="headerlink" title="编辑器："></a>编辑器：</h3><p>vs code/notepad++： 比记事本好用多了  </p>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>navicat： mysql数据库常用工具</p>
+<h3 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h3><p>vs code/notepad++： 比记事本好用多了  </p>
 <h3 id="ftp"><a href="#ftp" class="headerlink" title="ftp:"></a>ftp:</h3><p>xftp:  可以连接服务器，或者本地虚拟机，上传文件等</p>
 <h3 id="远程连接："><a href="#远程连接：" class="headerlink" title="远程连接："></a>远程连接：</h3><p>xshell/secure CRT：  测试常用，自己需要也可以用，putty也可以，轻量级</p>
 <h3 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h3><p>有道云笔记/印象笔记：  印象笔记免费只能授权两台设备，不需要多端可以尝试<br>印象笔记可以插入代码段，还是很好的<br>markdownPad2 :    效果感人</p>
 <h3 id="虚拟机："><a href="#虚拟机：" class="headerlink" title="虚拟机："></a>虚拟机：</h3><p>vmware/virtual box:  可以本地装虚拟机，双系统不是很有必要(个人感觉)  </p>
 <h3 id="Sourcetree"><a href="#Sourcetree" class="headerlink" title="Sourcetree:"></a>Sourcetree:</h3><p>有兴趣可以查查, 版本管理神器  </p>
-<h3 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h3><p>regexbuddy </p>
+<h3 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h3><p>regexbuddy</p>
 <h3 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h3><p>epud, Reader</p>
 <h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>rabbitmq， qpid</p>
 <h3 id="wiki"><a href="#wiki" class="headerlink" title="wiki"></a>wiki</h3><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>jerkins</p>
@@ -408,7 +407,7 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="ckw7lqyc4000njc20stovq430" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/27/tools/" data-id="ckwar0rs9000yu820x5nzgx33" class="article-share-link">Share</a>
       
       
     </footer>
@@ -447,7 +446,7 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="ckw7lqybk0005jc20dd7m00tt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/19/first/" data-id="ckwar0rqv0008u820oazh0s3k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,19 +479,19 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
     <div class="article-entry" itemprop="articleBody">
       
         <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="ckw7lqyc0000hjc20z8pjjsro" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/17/hello-world/" data-id="ckwar0rr6000eu820mtefdeeb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -556,11 +555,11 @@ cell.getCellStyle().getDataFormatString()</code><br>cell中值七种形式:<br>_
           </li>
         
           <li>
-            <a href="/2021/07/04/database/mvcc/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">mvcc</a>
           </li>
         
           <li>
-            <a href="/2020/05/30/SFTP/">SFTP</a>
+            <a href="/2020/05/30/linux/SFTP/">SFTP</a>
           </li>
         
           <li>

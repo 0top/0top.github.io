@@ -7,18 +7,18 @@
   
   <title>@Transactional | zerotop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 问题在同一个类的方法中调用带有事务的方法，事务失效 由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也">
+  <meta name="description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 事务失效 同一个bean中在同一个类的方法中调用带有事务的方法，事务失效由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方">
 <meta name="keywords" content="事务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="@Transactional">
-<meta property="og:url" content="http://yoursite.com/2018/12/06/Transactional/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/12/06/database/Transactional/index.html">
 <meta property="og:site_name" content="zerotop">
-<meta property="og:description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 问题在同一个类的方法中调用带有事务的方法，事务失效 由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也">
+<meta property="og:description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 事务失效 同一个bean中在同一个类的方法中调用带有事务的方法，事务失效由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-20T14:51:47.958Z">
+<meta property="og:updated_time" content="2021-11-20T09:52:44.446Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="@Transactional">
-<meta name="twitter:description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 问题在同一个类的方法中调用带有事务的方法，事务失效 由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也">
+<meta name="twitter:description" content="简介本篇主要简单介绍一下事务 事务事务是一个独立的工作单元 要么全部成功要么全部失败事务在我们处理并发场景用的很多   我们可以使用事务的四种隔离级别处理相对应的业务 以及使用不同的策略 事务失效 同一个bean中在同一个类的方法中调用带有事务的方法，事务失效由于spring使用代理方式当调用一个方法时，它会先检查时候有事务，有则开启事务，当调用本类的方法是，它并没有将其视为proxy调用，而是方">
   
     <link rel="alternate" href="/atom.xml" title="zerotop" type="application/atom+xml">
   
@@ -65,9 +65,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Transactional" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-database/Transactional" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/12/06/Transactional/" class="article-date">
+    <a href="/2018/12/06/database/Transactional/" class="article-date">
   <time datetime="2018-12-06T14:34:18.000Z" itemprop="datePublished">2018-12-06</time>
 </a>
     
@@ -91,13 +91,23 @@
 <h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是一个独立的工作单元 要么全部成功要么全部失败<br>事务在我们处理并发场景用的很多  </p>
 <p>我们可以使用事务的四种隔离级别处理相对应的业务</p>
 <p>以及使用不同的策略</p>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在同一个类的方法中调用带有事务的方法，事务失效</p>
-<p>由于spring使用代理方式<br>当调用一个方法时，它会先检查时候有事务，有则开启事务，<br>当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也就没有检查该方法是否含有事务这个过程，<br>那么本地方法调用的事务也就无效了。</p>
+<h3 id="事务失效"><a href="#事务失效" class="headerlink" title="事务失效"></a>事务失效</h3><ol>
+<li><p>同一个bean中在同一个类的方法中调用带有事务的方法，事务失效<br>由于spring使用代理方式<br>当调用一个方法时，它会先检查时候有事务，有则开启事务，<br>当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也就没有检查该方法是否含有事务这个过程，<br>那么本地方法调用的事务也就无效了。</p>
+</li>
+<li><p>数据库不支持事务</p>
+</li>
+<li><p>@Transactional注解注释方法不是public</p>
+</li>
+<li><p>方法发生异常后在代码层面catch</p>
+</li>
+<li><p>bean未被spring管理</p>
+</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/06/Transactional/" data-id="ckw7lqybx000fjc20ajqbnk6a" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/06/database/Transactional/" data-id="ckwar0rs4000tu820avj610fe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事务/">事务</a></li></ul>
@@ -175,11 +185,11 @@
           </li>
         
           <li>
-            <a href="/2021/07/04/database/mvcc/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">mvcc</a>
           </li>
         
           <li>
-            <a href="/2020/05/30/SFTP/">SFTP</a>
+            <a href="/2020/05/30/linux/SFTP/">SFTP</a>
           </li>
         
           <li>
