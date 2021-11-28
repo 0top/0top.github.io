@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ckwar0rqi0001u820libzb507" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/01/08/atomic/" data-id="ckwiwh43w0003js2016r5xfpj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ckwar0rqo0003u82078hjqiq9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/19/clazz/" data-id="ckwiwh4430005js200sl0ox4e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -175,6 +175,21 @@
 <h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是一个独立的工作单元 要么全部成功要么全部失败<br>事务在我们处理并发场景用的很多  </p>
 <p>我们可以使用事务的四种隔离级别处理相对应的业务</p>
 <p>以及使用不同的策略</p>
+<h3 id="acid"><a href="#acid" class="headerlink" title="acid"></a>acid</h3><ul>
+<li>原子性: 事物中操作要么全部成功，要么全部失败</li>
+<li>一致性：事务执行前后保证数据库一致性</li>
+<li>隔离性: 事务之间项目隔离</li>
+<li>持久性：事务执行结束后数据持久化到数据库中</li>
+</ul>
+<h3 id="传播PROPAGATION"><a href="#传播PROPAGATION" class="headerlink" title="传播PROPAGATION"></a>传播PROPAGATION</h3><ul>
+<li>PROPAGATION_REQUIRED:<br>  若当前存在事务，则使用当前事务，若不存在事务，则新建一个事务</li>
+<li>PAOPAGATION_REQUIRE_NEW:<br>  没有事务则新建，存在事务，新建事务，独立运行</li>
+<li>PROPAGATION_NESTED:<br>  若存在事务，则嵌套在当前事务执行，若不存在，则新建事务执行</li>
+<li>PROPAGATION_SUPPORTS:<br>  支持当前事务，如果不存在事务则以非事务方式执行</li>
+<li>PROPAGATION_NOT_SUPPORTED:<br>  以非事务执行，如果存在事务则挂起执行</li>
+<li>PROPAGATION_MANDATORY:<br>  强制事务执行，如果不存在事务则抛出异常</li>
+<li>PROPAGATION_NEVER:<br>  以非事务方式运行，如果存在事务则抛出异常</li>
+</ul>
 <h3 id="事务失效"><a href="#事务失效" class="headerlink" title="事务失效"></a>事务失效</h3><ol>
 <li><p>同一个bean中在同一个类的方法中调用带有事务的方法，事务失效<br>由于spring使用代理方式<br>当调用一个方法时，它会先检查时候有事务，有则开启事务，<br>当调用本类的方法是，它并没有将其视为proxy调用，而是方法的直接调用，所以也就没有检查该方法是否含有事务这个过程，<br>那么本地方法调用的事务也就无效了。</p>
 </li>
@@ -191,7 +206,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/12/06/database/Transactional/" data-id="ckwar0rs4000tu820avj610fe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/12/06/database/Transactional/" data-id="ckwiwh45o000rjs200z55pqdd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事务/">事务</a></li></ul>
@@ -234,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/27/database/数据库/" data-id="ckwar0rsq001bu8201co0v8xo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/27/database/数据库/" data-id="ckwiwh45n000qjs20l3pzzqpu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li></ul>
@@ -281,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="ckwar0rqy0009u82015ttt414" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/11/15/git-server/" data-id="ckwiwh44a0009js20eaiwvuay" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -333,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="ckwar0rrb000iu820n277zpb3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/31/书/" data-id="ckwiwh454000mjs20gwxv0wt5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/other/">other</a></li></ul>
@@ -394,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="ckwar0rqq0004u820gw3qmwgj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/24/cors/" data-id="ckwiwh44f000djs20xv9lorxx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -431,11 +446,11 @@
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>shiro中权限管理<br>首先是角色<br>一个人对应多个角色<br>每个角色都拥有固定的权限<br>或者也可以给相关用户添加权限  </p>
 <p>相对于某个页面或者操作，我们都需要有对应的权限<br>在查询权限是，首先是针对当前用户查询其拥有的权限<br>然后进行授权操作  </p>
 <p>换取token过程对服务器性能要求比较高</p>
-
+<h3 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h3>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/auth/shiro/" data-id="ckwar0rrz000pu820fef36cnn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/auth/shiro/" data-id="ckwiwh468001djs20jj2ytmi5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -485,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/17/auth/权限验证/" data-id="ckwar0rs2000su820advy7xo8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/17/auth/权限验证/" data-id="ckwiwh45r000ujs20dz1e1fve" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shiro/">shiro</a></li></ul>
@@ -533,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/10/10/excel/poi读取值/" data-id="ckwar0rts001pu820y21z0q4n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/10/10/excel/poi读取值/" data-id="ckwiwh4640017js20s4ktbzoz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel/">Excel</a></li></ul>
@@ -595,11 +610,11 @@
       <ul>
         
           <li>
-            <a href="/2021/07/04/disruptor/disruptor/">disruptor</a>
+            <a href="/2021/07/04/database/mvcc/">mvcc</a>
           </li>
         
           <li>
-            <a href="/2021/07/04/database/mvcc/">mvcc</a>
+            <a href="/2021/07/04/disruptor/disruptor/">disruptor</a>
           </li>
         
           <li>
